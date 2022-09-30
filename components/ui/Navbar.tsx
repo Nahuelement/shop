@@ -21,7 +21,7 @@ export const Navbar = () => {
         push(`/search/${ searchTerm }`);
     }
 
-    
+
 
     return (
         <AppBar>
@@ -29,8 +29,8 @@ export const Navbar = () => {
                 <NextLink href='/' passHref>
                     <Link display='flex' alignItems='center'>
                         <Typography variant='h6'>Teslo |</Typography>
-                        <Typography sx={{ ml: 0.5 }}>Shop</Typography>
-                    </Link>  
+                        <Typography sx={{ ml: 0.5 }}>Shop!!!</Typography>
+                    </Link>
                 </NextLink>
 
                 <Box flex={ 1 } />
@@ -56,12 +56,12 @@ export const Navbar = () => {
 
 
                 <Box flex={ 1 } />
-                
-                
+
+
 
                 {/* Pantallas pantallas grandes */}
                 {
-                    isSearchVisible 
+                    isSearchVisible
                         ? (
                             <Input
                                 sx={{ display: { xs: 'none', sm: 'flex' } }}
@@ -83,9 +83,9 @@ export const Navbar = () => {
                                 }
                             />
                         )
-                    : 
+                    :
                     (
-                        <IconButton 
+                        <IconButton
                             onClick={ () => setIsSearchVisible(true) }
                             className="fadeIn"
                             sx={{ display: { xs: 'none', sm: 'flex' } }}
