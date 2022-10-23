@@ -69,9 +69,9 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
 
         {/* Footer */}
 
-        <footer>
-            {/* TODO: mi custom footer */}
-        </footer>
+        {/* <footer>
+            
+        </footer> */}
 
     </>
   )

@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { ShopLayout } from '../components/layouts';
 
@@ -21,12 +21,14 @@ const HomePage: NextPage<Props> = ({products}) => {
 
 
   // const { products, isLoading } = useProducts('/products');
-  
+
 
   return (
     <ShopLayout title={'Shoping - Home'} pageDescription={'Encuentras las mejores marcas en shoping'}>
         {/* <Typography variant='h1' component='h1'>Tienda</Typography> */}
-        <Typography variant='h1' sx={{ mb: 1 }}>Todos los productos</Typography>
+        <Box display='flex' justifyContent='center' width='90vw'>
+        <Typography className='titleAllproduct' variant='h1' sx={{ mb: 1 }}>Todos los productos</Typography>
+        </Box>
 
         {/* {
           isLoading

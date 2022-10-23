@@ -75,6 +75,8 @@ const AddressPage = () => {
           height: '100vh',
           backgroundSize: 'cover',
           backgroundImage:'url(https://res.cloudinary.com/nahuelement/image/upload/v1666506946/ey1orfvaihx3uvw93m2r.svg)',
+          marginBottom:'-10vh',
+          marginTop:'-10vh'
 
 
         }}

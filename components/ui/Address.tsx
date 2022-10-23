@@ -78,10 +78,10 @@ export const Address = () => {
   return (
     <form onSubmit={ handleSubmit( onSubmitAddress ) }>
 
-
+        <Box display='flex' justifyContent='center'>
             <Typography variant="h1" component='h1'>Dirección</Typography>
-
-            <Grid container spacing={ 4 } sx={{ mt: 2 }} >
+         </Box>
+            <Grid container spacing={ 4 } sx={{ mt: 0 }} >
 
                 <Grid item xs={12} sm={ 6 }  >
                     <TextField

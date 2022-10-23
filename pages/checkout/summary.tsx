@@ -18,18 +18,18 @@ const SummaryPage = () => {
 
     const [isPosting, setIsPosting] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    
+
     useEffect(() => {
         if ( !Cookies.get('firstName') ) {
             router.push('/checkout/address');
         }
     }, [ router ]);
-    
+
 
     const onCreateOrder = async() => {
         setIsPosting(true);
 
-        const { hasError, message } = await createOrder(); 
+        const { hasError, message } = await createOrder();
 
         if ( hasError ) {
             setIsPosting(false);
@@ -54,34 +54,59 @@ const SummaryPage = () => {
         <Typography variant='h1' component='h1'>Resumen de la orden</Typography>
 
         <Grid container>
-            <Grid item xs={ 12 } sm={ 7 }>
+            <Grid item xs={ 12 } >
                 <CartList />
             </Grid>
-            <Grid item xs={ 12 } sm={ 5 }>
+            <Grid item xs={ 12 } display='flex' flexDirection='column'>
                 <Card className='summary-card'>
-                    <CardContent>
+                    <CardContent
+                    sx={{
+                        display:'flex',
+                        flexDirection:'row'
+
+                    }}
+                     >
+                    <Grid container>
+                        <Grid item xs={6}>
                         <Typography variant='h2'>Resumen ({numberOfItems} { numberOfItems === 1 ? 'producto':'productos' })</Typography>
                         <Divider sx={{ my:1 }} />
+                        </Grid>
+                        <Grid item xs={6}>
+                        <Grid display='flex' justifyContent='end'>
 
-                        <Box display='flex' justifyContent='space-between'>
-                            <Typography variant='subtitle1'>Dirección de entrega</Typography>
                             <NextLink href='/checkout/address' passHref>
                                 <Link underline='always'>
                                     Editar
                                 </Link>
                             </NextLink>
-                        </Box>
-
-                        
+                        </Grid>
+                        </Grid>
+                        <Grid item xs={12}>
+                        <Typography variant='subtitle1'>Dirección de entrega</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
                         <Typography>{ firstName } { lastName }</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
                         <Typography>{ address }{ address2 ? `, ${address2}` : ''  } </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
                         <Typography>{ city }, { zip }</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
                         {/* <Typography>{ countries.find( c => c.code === country )?.name }</Typography> */}
                         <Typography>{ country }</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
                         <Typography>{ phone }</Typography>
+                        </Grid>
+
+                    </Grid>
 
                         <Divider sx={{ my:1 }} />
 
+                    <Grid container>
+                    <Grid item xs={12}>
                         <Box display='flex' justifyContent='end'>
                             <NextLink href='/cart' passHref>
                                 <Link underline='always'>
@@ -89,10 +114,12 @@ const SummaryPage = () => {
                                 </Link>
                             </NextLink>
                         </Box>
-
+                        </Grid>
+                     <Grid item xs={12}>
                         <OrderSummary />
-
-                        <Box sx={{ mt: 3 }} display="flex" flexDirection="column">
+                    </Grid>
+                        <Grid item xs={12} display="flex" flexDirection="row" justifyContent='center'>
+                        <Box sx={{ mt: 3 }} >
                             <Button
                                 color="secondary"
                                 className='circular-btn'
@@ -104,7 +131,7 @@ const SummaryPage = () => {
                             </Button>
 
 
-                            <Chip 
+                            <Chip
                                 color="error"
                                 label={ errorMessage }
                                 sx={{ display: errorMessage ? 'flex':'none', mt: 2 }}
@@ -112,6 +139,8 @@ const SummaryPage = () => {
 
 
                         </Box>
+                        </Grid>
+                     </Grid>
 
                     </CardContent>
                 </Card>

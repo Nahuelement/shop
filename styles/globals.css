@@ -46,10 +46,11 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
 .circular-btn {
   border-radius: 30px;
   max-width: 200px!important;
+  font-size: larger!important;
 }
 
 .circular-btn:hover {
-  background-color: #274494 !important;
+  background-color: #3b62cd !important;
 }
 
 
@@ -107,5 +108,27 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
 .shadowInput{
   border-radius: 10px;
 background: #f9f8fc;
-shadow: inset 17px 17px 34px #e8e7ea, inset -17px -17px 34px #fff !important
+}
+.ml15 {
+  font-weight: 700;
+  font-size: 3.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em!important;
+  color:#0093E9;
+  font-family: Permanent Marker, serif!important;
+}
+
+.ml15 .word {
+  display: inline-block;
+  font-family: Permanent Marker, serif;
+
+}
+.titleAllproduct{
+  font-family: Permanent Marker, serif!important;
+  color:#0093E9;
+  font-weight: 700;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em!important;
+
 }
