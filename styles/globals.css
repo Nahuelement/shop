@@ -116,6 +116,7 @@ background: #f9f8fc;
   letter-spacing: 0.1em!important;
   color:#0093E9;
   font-family: Permanent Marker, serif!important;
+  z-index: 10;
 }
 
 .ml15 .word {
