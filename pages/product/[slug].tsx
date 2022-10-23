@@ -62,17 +62,17 @@ const ProductPage:NextPage<Props> = ({ product }) => {
 
   return (
     <ShopLayout title={ product.title } pageDescription={ product.description }>
-    
-      <Grid container spacing={3}>
 
-        <Grid item xs={12} sm={ 7 }>
-          <ProductSlideshow 
+      <Grid container spacing={10}>
+
+        <Grid item xs={12} sm={ 6 } >
+          <ProductSlideshow
             images={ product.images }
           />
         </Grid>
 
-        <Grid item xs={ 12 } sm={ 5 }>
-          <Box display='flex' flexDirection='column'>
+        <Grid item xs={ 12 } sm={ 6}>
+          <Box display='flex' flexDirection='column' >
 
             {/* titulos */}
             <Typography variant='h1' component='h1'>{ product.title }</Typography>
@@ -81,26 +81,27 @@ const ProductPage:NextPage<Props> = ({ product }) => {
             {/* Cantidad */}
             <Box sx={{ my: 2 }}>
               <Typography variant='subtitle2'>Cantidad</Typography>
-              <ItemCounter 
+              <ItemCounter
                 currentValue={ tempCartProduct.quantity }
                 updatedQuantity={ onUpdateQuantity  }
                 maxValue={ product.inStock > 10 ? 10: product.inStock }
+                justify='start'
               />
-              <SizeSelector 
-                // selectedSize={ product.sizes[2] } 
+              <SizeSelector
+                // selectedSize={ product.sizes[2] }
                 sizes={ product.sizes }
                 selectedSize={ tempCartProduct.size }
                 onSelectedSize={ selectedSize }
               />
             </Box>
 
-
+            <Box justifyContent='center' alignContent='center'>
             {/* Agregar al carrito */}
             {
               (product.inStock > 0)
                ? (
-                  <Button 
-                    color="secondary" 
+                  <Button
+                    color="secondary"
                     className='circular-btn'
                     onClick={ onAddProduct }
                   >
@@ -115,6 +116,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
                  <Chip label="No hay disponibles" color="error" variant='outlined' />
                )
             }
+            </Box>
 
 
             {/* Descripción */}
@@ -134,12 +136,12 @@ const ProductPage:NextPage<Props> = ({ product }) => {
 }
 
 
-// getServerSideProps 
+// getServerSideProps
 // You should use getServerSideProps when:
 // - Only if you need to pre-render a page whose data must be fetched at request time
 //* No usar esto.... SSR
 // export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  
+
 //   const { slug = '' } = params as { slug: string };
 //   const product = await dbProducts.getProductBySlug( slug );
 
@@ -163,10 +165,10 @@ const ProductPage:NextPage<Props> = ({ product }) => {
 // getStaticPaths....
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  
+
   const productSlugs = await dbProducts.getAllProductSlugs();
 
-  
+
   return {
     paths: productSlugs.map( ({ slug }) => ({
       params: {
@@ -183,7 +185,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 //- The data can be publicly cached (not user-specific).
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  
+
   const { slug = '' } = params as { slug: string };
   const product = await dbProducts.getProductBySlug( slug );
 

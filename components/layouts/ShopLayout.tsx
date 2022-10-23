@@ -2,6 +2,9 @@ import { FC } from 'react';
 import Head from 'next/head';
 
 import { Navbar, SideMenu } from '../ui';
+import { SubBar } from '../ui/SubBar';
+import { SpotCarousel } from '../ui/Carousel';
+import { useRouter } from 'next/router';
 
 
 interface Props {
@@ -11,14 +14,18 @@ interface Props {
 }
 
 export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFullUrl }) => {
-  return (
+
+
+    const {asPath} = useRouter()
+
+ return (
     <>
         <Head>
             <title>{ title }</title>
 
             <meta name="description" content={ pageDescription } />
-            
-            
+
+
             <meta name="og:title" content={ title } />
             <meta name="og:description" content={ pageDescription } />
 
@@ -28,7 +35,7 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
                 )
             }
 
-        </Head> 
+        </Head>
 
         <nav>
             <Navbar />
@@ -36,15 +43,32 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
 
         <SideMenu />
 
+        {
+                (asPath==='/')?
+                <>
+                < SpotCarousel/>
+
+              <SubBar/>
+
+                </>
+                :
+                null
+
+            }
+
         <main style={{
             margin: '80px auto',
             maxWidth: '1440px',
             padding: '0px 30px'
         }}>
+
+
+
             { children }
         </main>
 
         {/* Footer */}
+
         <footer>
             {/* TODO: mi custom footer */}
         </footer>

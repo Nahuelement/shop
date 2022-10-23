@@ -1,62 +1,51 @@
-
-import { GetServerSideProps } from 'next';
-
-
-import { signIn, getSession } from 'next-auth/react';
-
-
+import { ErrorOutline } from '@mui/icons-material';
 import { Box, Button, Chip, Grid, Link, TextField, Typography } from '@mui/material';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import React, { useContext, useState } from 'react'
+import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../context';
+import { validations } from '../../utils';
+import NextLink from 'next/link';
 
-import { AuthLayout } from '../../components/layouts'
+type FormData = {
+    name    : string;
+    email   : string;
+    password: string;
+};
 
-import { Register } from '../../components/ui/Register';
-import Image from 'next/image';
-
-
-
-
-
-
-
-const RegisterPage = () => {
-
-
-
-    return (
-        <AuthLayout title={'Registrarse'}>
-
-
-<Grid container className='backgroundAnimated'>
-<Grid item xs={12}  sx={{
-         display:'flex'
-
-    }}
-    justifyContent='center' paddingTop='29vh' >
-    <Register/>
-    </Grid>
-    {/* <Grid item xs={12}  lg={5} display='flex' justifyContent='start' pt='15vh'
-    sx={{
-        display:{xs:'none',lg:'flex'}
-    }}
-
-    >
-    <Box sx={{
-        pl:'1vw'
-    }}>
-    < Image
-    width={540}
-    height={600}
-    src='https://res.cloudinary.com/nahuelement/image/upload/v1666214501/jhnnpcw3kmrfuj2mzvco.jpg'
-    layout="intrinsic"
-    />
-    </Box>
-    </Grid> */}
-    </Grid>
+export const Register = () => {
+    const router = useRouter();
+    const { registerUser } = useContext( AuthContext );
 
 
-            {/* <form onSubmit={ handleSubmit(onRegisterForm) } noValidate>
-                <Box sx={{ width: 350, padding:'10px 20px' }}>
-                    <Grid container spacing={2}>
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+    const [ showError, setShowError ] = useState(false);
+    const [ errorMessage, setErrorMessage ] = useState('');
+
+    const onRegisterForm = async( {  name, email, password }: FormData ) => {
+
+        setShowError(false);
+        const { hasError, message } = await registerUser(name, email, password);
+
+        if ( hasError ) {
+            setShowError(true);
+            setErrorMessage( message! );
+            setTimeout(() => setShowError(false), 3000);
+            return;
+        }
+
+        // Todo: navegar a la pantalla que el usuario estaba
+        // const destination = router.query.p?.toString() || '/';
+        // router.replace(destination);
+
+        await signIn('credentials',{ email, password });
+
+    }
+  return (
+    <form onSubmit={ handleSubmit(onRegisterForm) } noValidate>
+                <Box sx={{ width: 350, padding:'10px 20px' }} >
+                    <Grid container spacing={2} marginBottom='23vh' marginLeft='-3vw' >
                         <Grid item xs={12}>
                             <Typography variant='h1' component="h1">Crear cuenta</Typography>
                             <Chip
@@ -73,6 +62,11 @@ const RegisterPage = () => {
                                 label="Nombre completo"
                                 variant="filled"
                                 fullWidth
+                                sx={{
+                                    background:'white',
+                                    borderRadius:'5px',
+                                    boxShadow:3
+                                }}
                                 { ...register('name', {
                                     required: 'Este campo es requerido',
                                     minLength: { value: 2, message: 'Mínimo 2 caracteres' }
@@ -87,6 +81,11 @@ const RegisterPage = () => {
                                 label="Correo"
                                 variant="filled"
                                 fullWidth
+                                sx={{
+                                    background:'white',
+                                    borderRadius:'5px',
+                                    boxShadow:3
+                                }}
                                 { ...register('email', {
                                     required: 'Este campo es requerido',
                                     validate: validations.isEmail
@@ -101,7 +100,14 @@ const RegisterPage = () => {
                                 label="Contraseña"
                                 type='password'
                                 variant="filled"
+
                                 fullWidth
+                                sx={{
+                                    background:'white',
+                                    borderRadius:'5px',
+                                    boxShadow:3
+
+                                }}
                                 { ...register('password', {
                                     required: 'Este campo es requerido',
                                     minLength: { value: 6, message: 'Mínimo 6 caracteres' }
@@ -111,57 +117,35 @@ const RegisterPage = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid item xs={12} display='flex' justifyContent='center'>
                             <Button
                                 type="submit"
                                 color="secondary"
                                 className='circular-btn'
                                 size='large'
                                 fullWidth
+                                sx = {{
+                                    boxShadow:1
+                                }}
                             >
                                 Ingresar
                             </Button>
                         </Grid>
 
-                        <Grid item xs={12} display='flex' justifyContent='end'>
+                        <Grid item xs={12} display='flex' justifyContent='center'>
                             <NextLink
                                 href={ router.query.p ? `/auth/login?p=${ router.query.p }`: '/auth/login' }
                                 passHref
                             >
                                 <Link underline='always'>
-                                    ¿Ya tienes cuenta?
+                                <Typography color='gray' variant='h2' component="h2">¿Ya tienes cuenta?</Typography>
+
                                 </Link>
                             </NextLink>
                         </Grid>
                     </Grid>
                 </Box>
-            </form> */}
-        </AuthLayout>
-    )
+            </form>
+
+  )
 }
-
-
-
-export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
-
-    const session = await getSession({ req });
-    // console.log({session});
-
-    const { p = '/' } = query;
-
-    if ( session ) {
-        return {
-            redirect: {
-                destination: p.toString(),
-                permanent: false
-            }
-        }
-    }
-
-
-    return {
-        props: { }
-    }
-}
-
-export default RegisterPage

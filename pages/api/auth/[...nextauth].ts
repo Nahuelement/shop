@@ -7,7 +7,7 @@ import { dbUsers } from '../../../database';
 export default NextAuth({
   // Configure one or more authentication providers
   providers: [
-    
+
     // ...add more providers here
 
     Credentials({
@@ -44,7 +44,7 @@ export default NextAuth({
   jwt: {
     // secret: process.env.JWT_SECRET_SEED, // deprecated
   },
-  
+
   session: {
     maxAge: 2592000, /// 30d
     strategy: 'jwt',
@@ -62,7 +62,7 @@ export default NextAuth({
 
         switch( account.type ) {
 
-          case 'oauth': 
+          case 'oauth':
             token.user = await dbUsers.oAUthToDbUser( user?.email || '', user?.name || '' );
           break;
 
@@ -85,7 +85,7 @@ export default NextAuth({
 
       return session;
     }
-    
+
 
   }
 

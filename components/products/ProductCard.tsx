@@ -24,21 +24,29 @@ export const ProductCard: FC<Props> = ({ product }) => {
       <Grid item
             xs={6}
             sm={ 4 }
+            lg={3}
+            pt={5}
             onMouseEnter={ () => setIsHovered(true) }
             onMouseLeave={ () => setIsHovered(false) }
       >
-          <Card>
+          <Card
+        //   sx={{height:'65vh'}}
+          >
+            {
+            product &&
+            <>
               <NextLink href={`/product/${ product.slug }`} passHref prefetch={ false }>
                 <Link>
 
-                    <CardActionArea>
+
+                 <CardActionArea>
 
                         {
                             (product.inStock === 0 ) && (
                                 <Chip
-                                    color="primary"
-                                    label="No hay disponibles"
-                                    sx={{ position: 'absolute', zIndex: 99, top: '10px', left: '10px' }}
+                                    color="secondary"
+                                    label="Sin stock disponible"
+                                    sx={{ position: 'absolute', zIndex: 99, right:'10%',left:'10%', top:'50%', translate:'(-50%,-50%)'}}
                                 />
                             )
                         }
@@ -52,15 +60,27 @@ export const ProductCard: FC<Props> = ({ product }) => {
                         />
 
                     </CardActionArea>
-                </Link>
-              </NextLink>
 
+
+
+              <Box sx={{ mt: 2, display: 'flex'}} className='fadeIn'
+                flexDirection='column'
+
+              >
+
+              <Typography pb={1} pl={1} fontWeight={700}>{ product.title }</Typography>
+
+              <Typography color='black' fontWeight={600} pl={1}>{ `$ ${product.price}` }</Typography>
+          </Box>
+
+          </Link>
+              </NextLink>
+              <br/>
+              </>
+                    }
           </Card>
 
-          <Box sx={{ mt: 1, display: isImageLoaded ? 'block' : 'none' }} className='fadeIn'>
-              <Typography fontWeight={700}>{ product.title }</Typography>
-              <Typography fontWeight={500}>{ `$${product.price}` }</Typography>
-          </Box>
+
       </Grid>
     )
 }

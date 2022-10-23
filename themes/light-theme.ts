@@ -6,10 +6,13 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1E1E1E'
+      main: '#0093E9'
+
     },
     secondary: {
-      main: '#3A64D8'
+      main: '#0093E9'
+
+
     },
     info: {
       main: '#fff'
@@ -29,13 +32,17 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: 'white',
-          height: 60
+          height: 70
         },
       }
     },
 
     MuiTypography: {
+
       styleOverrides: {
+        root:{
+          fontFamily: 'Open Sans, sans-serif;'
+        },
         h1: {
           fontSize: 30,
           fontWeight: 600
@@ -64,6 +71,10 @@ export const lightTheme = createTheme({
           textTransform: 'none',
           boxShadow: 'none',
           borderRadius: 10,
+          fontFamily: 'Oswald, sans-serif;',
+
+          fontSize:'14px',
+
           ":hover": {
             backgroundColor: 'rgba(0,0,0,0.05)',
             transition: 'all 0.3s ease-in-out'
@@ -84,6 +95,6 @@ export const lightTheme = createTheme({
         }
       }
     }
-    
+
   }
 });

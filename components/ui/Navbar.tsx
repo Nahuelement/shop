@@ -6,6 +6,7 @@ import { AppBar, Badge, Box, Button, IconButton, Input, InputAdornment, Link, To
 import { ClearOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
 import { CartContext, UiContext } from '../../context';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const Navbar = () => {
 
@@ -28,31 +29,45 @@ export const Navbar = () => {
             <Toolbar>
                 <NextLink href='/' passHref>
                     <Link display='flex' alignItems='center'>
-                        <Typography variant='h6'>Teslo |</Typography>
-                        <Typography sx={{ ml: 0.5 }}>Shop!!!</Typography>
+                        <Typography  variant='h1'>Shopping </Typography>
+
                     </Link>
                 </NextLink>
 
                 <Box flex={ 1 } />
 
-                <Box sx={{ display: isSearchVisible ? 'none' : { xs: 'none', sm: 'block' } }}
-                    className="fadeIn">
-                    <NextLink href='/category/men' passHref>
-                        <Link>
-                            <Button color={ asPath === '/category/men' ? 'primary':'info'}>Hombres</Button>
-                        </Link>
-                    </NextLink>
-                    <NextLink href='/category/women' passHref>
-                        <Link>
-                            <Button color={ asPath === '/category/women' ? 'primary':'info'}>Mujeres</Button>
-                        </Link>
-                    </NextLink>
-                    <NextLink href='/category/kid' passHref>
-                        <Link>
-                            <Button color={ asPath === '/category/kid' ? 'primary':'info'}>Niños</Button>
-                        </Link>
-                    </NextLink>
-                </Box>
+
+     { (asPath !== '/')?
+        <Box sx={{ display:{ xs: 'none', sm: 'flex' },width:'30vw' }}
+        justifyContent='space-around'
+        pt={1}
+
+        className="  fadeIn">
+        <NextLink href='/category/men' passHref>
+            <Link>
+                <Button
+                style={{fontSize:16}}
+                   color={ asPath === '/category/men' ? 'primary':'info'}>Hombres</Button>
+            </Link>
+        </NextLink>
+        <NextLink href='/category/women' passHref>
+            <Link>
+                <Button
+                style={{fontSize:16}}
+                color={ asPath === '/category/women' ? 'primary':'info'}>Mujeres</Button>
+            </Link>
+        </NextLink>
+        <NextLink href='/category/kid' passHref>
+            <Link>
+                <Button
+                style={{fontSize:16}}
+                color={ asPath === '/category/kid' ? 'primary':'info'}>Niños</Button>
+            </Link>
+        </NextLink>
+    </Box>
+    :
+    null
+}
 
 
                 <Box flex={ 1 } />
@@ -116,9 +131,9 @@ export const Navbar = () => {
 
 
                 <Button onClick={ toggleSideMenu }>
-                    Menú
+                    <MenuIcon/>
                 </Button>
-
+        
             </Toolbar>
         </AppBar>
     )

@@ -7,30 +7,83 @@ import { ProductList } from '../components/products';
 import { useProducts } from '../hooks';
 
 import { FullScreenLoading } from '../components/ui';
+import { GetStaticProps } from 'next'
+import { IProduct } from '../interfaces/products';
+import axios from 'axios';
+import { Product } from '../models';
+import { db } from '../database';
+
+interface Props {
+  products:IProduct[]
+}
+
+const HomePage: NextPage<Props> = ({products}) => {
 
 
-const HomePage: NextPage = () => {
-
-
-  const { products, isLoading } = useProducts('/products');
-
+  // const { products, isLoading } = useProducts('/products');
+  
 
   return (
-    <ShopLayout title={'Teslo-Shop - Home'} pageDescription={'Encuentra los mejores productos de Teslo aquí'}>
-        <Typography variant='h1' component='h1'>Tienda</Typography>
-        <Typography variant='h2' sx={{ mb: 1 }}>Todos los productos</Typography>
+    <ShopLayout title={'Shoping - Home'} pageDescription={'Encuentras las mejores marcas en shoping'}>
+        {/* <Typography variant='h1' component='h1'>Tienda</Typography> */}
+        <Typography variant='h1' sx={{ mb: 1 }}>Todos los productos</Typography>
 
-        {
+        {/* {
           isLoading
-            ? <FullScreenLoading />
-            : <ProductList products={ products } />
-        }
+            ? <FullScreenLoading /> */}
+            <ProductList products={ products } />
+        {/* } */}
 
-        
-    
+
+
 
     </ShopLayout>
   )
 }
+
+// You should use getStaticProps when:
+//- The data required to render the page is available at build time ahead of a user’s request.
+//- The data comes from a headless CMS.
+//- The data can be publicly cached (not user-specific).
+//- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
+
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+
+
+  // const { gender = 'all' } = req.query;
+
+  // let condition = {};
+
+  // if ( gender !== 'all' && SHOP_CONSTANTS.validGenders.includes(`${gender}`) ) {
+  //     condition = { gender };
+  // }
+
+  await db.connect();
+  const products = await Product.find()
+                              .select('title images price inStock slug -_id')
+                              .lean();
+
+  await db.disconnect();
+  const updateProducts = products.map(product =>{
+      product.images = product.images.map( image => {
+          return image.includes('http') ? image : `${ process.env.HOST_NAME }products/${image}`
+      })
+
+      return product
+  })
+
+
+
+
+
+  return {
+    props: {
+      products:updateProducts
+    }
+  }
+}
+
+
 
 export default HomePage

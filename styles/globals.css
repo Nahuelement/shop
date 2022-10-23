@@ -2,11 +2,33 @@
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
-} 
+}
 
 @-webkit-keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+
+.loginColorBackground{
+  padding-top: 21vh;
+  background: #20002c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.registerColorBackgound{
+  padding-top: 21vh;
+  background: #FFEFBA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.fontStyle{
+  font-family: 'Chelsea Market', cursive !important;
 }
 
 .fadeIn {
@@ -15,6 +37,7 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 
+
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
@@ -22,6 +45,7 @@
 
 .circular-btn {
   border-radius: 30px;
+  max-width: 200px!important;
 }
 
 .circular-btn:hover {
@@ -32,4 +56,56 @@
 .summary-card {
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.backgroundAnimated{
+
+  margin:0;
+	padding-top:20vh;
+
+
+	font-family:"arial",heletica,sans-serif;
+	font-size:12px;
+    background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+
+}
+
+
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+
+.shadowInput{
+  border-radius: 10px;
+background: #f9f8fc;
+shadow: inset 17px 17px 34px #e8e7ea, inset -17px -17px 34px #fff !important
 }

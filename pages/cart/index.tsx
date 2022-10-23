@@ -16,7 +16,7 @@ const CartPage = () => {
         router.replace('/cart/empty');
       }
     }, [ isLoaded, cart, router ])
-    
+
     if ( !isLoaded || cart.length === 0 ) {
         return (<></>);
     }
@@ -25,11 +25,11 @@ const CartPage = () => {
         <ShopLayout title='Carrito - 3' pageDescription={'Carrito de compras de la tienda'}>
             <Typography variant='h1' component='h1'>Carrito</Typography>
 
-            <Grid container>
-                <Grid item xs={ 12 } sm={ 7 }>
+            <Grid container p={3} gap={3}>
+                <Grid item xs={ 12 } sm={ 12 }>
                     <CartList editable />
                 </Grid>
-                <Grid item xs={ 12 } sm={ 5 }>
+                <Grid item xs={ 12 } sm={ 12 } marginBottom='-9vh'>
                     <Card className='summary-card'>
                         <CardContent>
                             <Typography variant='h2'>Orden</Typography>
@@ -37,14 +37,19 @@ const CartPage = () => {
 
                             <OrderSummary />
 
-                            <Box sx={{ mt: 3 }}>
-                                <Button 
+                            <Box sx={{ mt: 3 }} display='flex' justifyContent='center'
+                            height={60}
+                            >
+                                <Button
                                     color="secondary"
-                                    className='circular-btn' 
+                                    className='circular-btn'
                                     fullWidth
                                     href='/checkout/address'
+                                    sx={{
+                                        fontSize:22
+                                    }}
                                 >
-                                    Checkout
+                                    Ir a pagar
                                 </Button>
                             </Box>
 

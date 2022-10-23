@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { ShopLayout } from '../../components/layouts';
 
@@ -17,8 +17,10 @@ const WomenPage: NextPage = () => {
 
   return (
     <ShopLayout title={'Teslo-Shop - Women'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
-        <Typography variant='h1' component='h1'>Mujeres</Typography>
-        <Typography variant='h2' sx={{ mb: 1 }}>Productos para ellas</Typography>
+        {/* <Typography variant='h1' component='h1'>Mujeres</Typography> */}
+        <Box display='flex' justifyContent='center'>
+        <Typography variant='h1' sx={{ mb: 2, pt:3}}>Productos de moda para ellas</Typography>
+        </Box>
 
         {
           isLoading
@@ -26,8 +28,8 @@ const WomenPage: NextPage = () => {
             : <ProductList products={ products } />
         }
 
-        
-    
+
+
 
     </ShopLayout>
   )

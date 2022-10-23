@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/hamburgers.css';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
@@ -15,8 +16,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SessionProvider>
       <PayPalScriptProvider options={{ 'client-id': process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || '' }}>
 
-      
-        <SWRConfig 
+
+        <SWRConfig
           value={{
             fetcher: (resource, init) => fetch(resource, init).then(res => res.json())
           }}

@@ -28,8 +28,8 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
         <>
             {
                 productsToShow.map( product => (
-                    <Grid container spacing={2} key={ product.slug + product.size } sx={{ mb:1 }}>
-                        <Grid item xs={3}>
+                    <Grid container spacing={2}  key={ product.slug + product.size } sx={{ mb:1,maxHeigth:'100px' }}>
+                        <Grid item xs={7} sm={3}>
                             {/* TODO: llevar a la página del producto */}
                             <NextLink href={`/product/${ product.slug }`} passHref>
                                 <Link>
@@ -37,6 +37,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                         <CardMedia
                                             image={ `${ product.image }` }
                                             component='img'
+
                                             sx={{ borderRadius: '5px' }}
                                         />
                                     </CardActionArea>
@@ -44,9 +45,10 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                             </NextLink>
                         </Grid>
                         <Grid item xs={7}>
-                            <Box display='flex' flexDirection='column'>
+                            <Box display='flex' flexDirection='column' pt={9}>
                                 <Typography variant='body1'>{ product.title }</Typography>
                                 <Typography variant='body1'>Talla: <strong>{ product.size }</strong></Typography>
+                                    <br/>
 
                                 {
                                     editable
@@ -58,13 +60,14 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                         />
                                     )
                                     : (
-                                        <Typography variant='h5'>{ product.quantity } { product.quantity > 1 ? 'productos':'producto' }</Typography>
+                                        <Typography sx={{mt:'-3vh'}} variant='h5'>{ product.quantity } { product.quantity > 1 ? 'productos':'producto' }</Typography>
                                     )
                                 }
 
                             </Box>
                         </Grid>
-                        <Grid item xs={2} display='flex' alignItems='center' flexDirection='column'>
+                        <Grid item xs={2} display='flex'  alignItems='center' flexDirection='column'>
+                            <Box pt={9}>
                             <Typography variant='subtitle1'>{ `$${ product.price }` }</Typography>
 
                             {
@@ -78,6 +81,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                     </Button>
                                 )
                             }
+                        </Box>
                         </Grid>
                     </Grid>
                 ))

@@ -7,6 +7,7 @@ import { UiContext, AuthContext } from '../../context';
 import { useRouter } from 'next/router';
 
 
+
 export const SideMenu = () => {
 
     const router = useRouter();
@@ -61,12 +62,12 @@ export const SideMenu = () => {
                 {
                     isLoggedIn && (
                         <>
-                            <ListItem button>
+                            {/* <ListItem button>
                                 <ListItemIcon>
                                     <AccountCircleOutlined/>
                                 </ListItemIcon>
                                 <ListItemText primary={'Perfil'} />
-                            </ListItem>
+                            </ListItem> */}
 
                             <ListItem
                                 button

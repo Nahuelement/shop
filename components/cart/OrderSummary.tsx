@@ -14,16 +14,16 @@ interface Props {
 }
 
 export const OrderSummary: FC<Props> = ({ orderValues }) => {
-    
+
     const { numberOfItems, subTotal, total, tax } = useContext( CartContext );
-    
+
     const summaryValues = orderValues ? orderValues : { numberOfItems, subTotal, total, tax };
-  
-    
+
+
 
   return (
-    <Grid container>
-        
+    <Grid container sx={{marginTop:'3vh'}}>
+
         <Grid item xs={6}>
             <Typography>No. Productos</Typography>
         </Grid>

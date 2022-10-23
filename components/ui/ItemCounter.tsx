@@ -6,12 +6,13 @@ import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
 interface Props {
   currentValue: number;
   maxValue: number;
+  justify?:string
 
   // Methods
   updatedQuantity: (newValue: number) => void;
 }
 
-export const ItemCounter:FC<Props> = ({ currentValue, updatedQuantity, maxValue }) => {
+export const ItemCounter:FC<Props> = ({ currentValue, updatedQuantity, maxValue ,justify='center'}) => {
 
   const addOrRemove = ( value: number ) => {
     if ( value === -1 ) {
@@ -24,10 +25,10 @@ export const ItemCounter:FC<Props> = ({ currentValue, updatedQuantity, maxValue 
 
     updatedQuantity( currentValue + 1 );
   }
-  
+
 
   return (
-    <Box display='flex' alignItems='center'>
+    <Box display='flex' alignItems='center' justifyContent={`${justify}`}>
         <IconButton onClick={ () => addOrRemove(-1) }>
             <RemoveCircleOutline />
         </IconButton>
