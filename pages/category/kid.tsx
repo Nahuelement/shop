@@ -69,7 +69,7 @@ const KidPage: NextPage<Props> = ({products}) => {
       </Box>
 
       <Grid  container  sx={{display:{xs:'flex',sm:'none'}}}  display='flex' justifyContent='center' >
-        <Grid item  display='flex' justifyContent='center' xs={12}>
+        <Grid item  display='block' justifyContent='center' xs={10}>
         <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos para niños</Typography>
         </Grid>
         </Grid>

@@ -29,12 +29,12 @@ export const ProductCard: FC<Props> = ({ product }) => {
             lg={3}
             pt={5}
             mb={5}
-           
+
             onMouseEnter={ () => setIsHovered(true) }
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-        sx={{height:{xs:'50vh',sm:'65vh'}}}
+        sx={{height:{xs:'45vh',sm:'65vh'}}}
           >
 
 
