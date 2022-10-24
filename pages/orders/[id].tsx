@@ -38,7 +38,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 
 
     const onOrderCompleted = async( details: OrderResponseBody ) => {
-        
+
         if ( details.status !== 'COMPLETED' ) {
             return alert('No hay pago en Paypal');
         }
@@ -46,7 +46,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
         setIsPaying(true);
 
         try {
-            
+
             const { data } = await tesloApi.post(`/orders/pay`, {
                 transactionId: details.id,
                 orderId: order._id
@@ -71,7 +71,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
         {
             order.isPaid
             ? (
-                <Chip 
+                <Chip
                     sx={{ my: 2 }}
                     label="Orden ya fue pagada"
                     variant='outlined'
@@ -80,7 +80,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                 />
             ):
             (
-                <Chip 
+                <Chip
                     sx={{ my: 2 }}
                     label="Pendiente de pago"
                     variant='outlined'
@@ -90,13 +90,14 @@ const OrderPage: NextPage<Props> = ({ order }) => {
             )
         }
 
-        
+
 
         <Grid container className='fadeIn'>
             <Grid item xs={ 12 } sm={ 7 }>
                 <CartList products={  order.orderItems } />
             </Grid>
-            <Grid item xs={ 12 } sm={ 5 }>
+            <Grid item xs={ 12 } sm={ 5 }
+            sx={{justifyContent:'center'}}>
                 <Card className='summary-card'>
                     <CardContent>
                         <Typography variant='h2'>Resumen ({ order.numberOfItems } { order.numberOfItems > 1 ? 'productos': 'producto'})</Typography>
@@ -106,7 +107,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                             <Typography variant='subtitle1'>Dirección de entrega</Typography>
                         </Box>
 
-                        
+
                         <Typography>{ shippingAddress.firstName } { shippingAddress.lastName }</Typography>
                         <Typography>{ shippingAddress.address } { shippingAddress.address2 ? `, ${ shippingAddress.address2 }`: '' }</Typography>
                         <Typography>{ shippingAddress.city }, { shippingAddress.zip }</Typography>
@@ -116,13 +117,13 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                         <Divider sx={{ my:1 }} />
 
 
-                        <OrderSummary 
+                        <OrderSummary
                             orderValues={{
                                 numberOfItems: order.numberOfItems,
                                 subTotal: order.subTotal,
                                 total: order.total,
                                 tax: order.tax,
-                            }} 
+                            }}
                         />
 
                         <Box sx={{ mt: 3 }} display="flex" flexDirection='column'>
@@ -139,7 +140,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                                 {
                                     order.isPaid
                                     ? (
-                                        <Chip 
+                                        <Chip
                                             sx={{ my: 2 }}
                                             label="Orden ya fue pagada"
                                             variant='outlined'
@@ -148,7 +149,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                                         />
 
                                     ):(
-                                        <PayPalButtons 
+                                        <PayPalButtons
                                             createOrder={(data, actions) => {
                                                 return actions.order.create({
                                                     purchase_units: [
@@ -191,7 +192,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 
 
 export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
-    
+
     const { id = '' } = query;
     const session:any = await getSession({ req });
 

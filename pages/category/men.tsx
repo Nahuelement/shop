@@ -35,8 +35,8 @@ const MenPage: NextPage = () => {
 
   return (
     <ShopLayout title={'Teslo-Shop - Men'} pageDescription={'Encuentra los mejores productospara ellos'}>
-      <br/>
-       <Box display='flex' justifyContent='center' >
+
+       {/* <Box display='flex' justifyContent='center' >
 
 
        <Box
@@ -65,8 +65,7 @@ const MenPage: NextPage = () => {
 
       </Box>
 
-        {/* <Typography variant='h1' sx={{ mb: 2, pt:3}}>Productos de moda para ellos</Typography> */}
-        </Box>
+        </Box> */}
 
         {
           isLoading

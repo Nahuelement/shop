@@ -34,15 +34,17 @@ const KidPage: NextPage = () => {
 
   return (
     <ShopLayout title={'Teslo-Shop - Kids'} pageDescription={'Encuentra los mejores productos de Teslo para niños'}>
-        
-         <Box display='flex' justifyContent='center'>
+
+
          <Box
           sx={{
             display:isLoad?'flex':'none',
 
             flexDirection:{xs:'column',sm:'row'}
           }}
-          className="ml15">
+          className="ml15"
+          justifyContent='center'
+          >
 
         <Typography
 
@@ -61,7 +63,7 @@ const KidPage: NextPage = () => {
         <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para niños</Typography>
 
       </Box>
-        </Box>
+        
 
         {
           isLoading
