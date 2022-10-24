@@ -53,7 +53,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                             </NextLink>
                         </Grid>
                         <Grid item xs={10} sm={3}
-                            sx={{display:'flex', justifyContent:'center'}}
+                            sx={{display:'flex', justifyContent:'center', marginTop:{xs:'-12vh',sm:'0vh'}}}
                         >
                             <Box display='flex' flexDirection='column' pt={9}>
                                 <Typography variant='body1'>{ product.title }</Typography>
@@ -76,9 +76,9 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
 
                             </Box>
                         </Grid>
-                        <Grid item xs={2} sm={3}
-                            sx={{display:'flex', justifyContent:'center'}} display='flex'  alignItems='center' flexDirection='column'>
-                            <Box pt={9}>
+                        <Grid item xs={2} sm={5}
+                            sx={{display:'flex', justifyContent:'flex-end'}} display='flex'  alignItems='center' flexDirection='row'>
+                            <Box pt={9} display='flex' flexDirection='column' justifyContent='flex-start'>
                             <Typography variant='subtitle1'>{ `$${ product.price }` }</Typography>
 
                             {

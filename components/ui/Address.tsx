@@ -203,7 +203,7 @@ export const Address = () => {
             </Grid>
 
 
-            <Box sx={{ mt: 5 }} display='flex' gap={4} justifyContent='center'>
+            <Box sx={{ mt: 5, paddingBottom:{xs:'5vh',sm:'0vh'} }} display='flex' gap={4} justifyContent='center'>
                 <Button type="submit" color="secondary" className="circular-btn" size="large">
                     Revisar pedido
                 </Button>

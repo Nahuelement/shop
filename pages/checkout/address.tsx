@@ -81,11 +81,13 @@ const AddressPage = () => {
 
         }}
         >
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={8}>
        <Address />
        </Grid>
-       <Grid item xs={4}>
-       <Box display='flex' justifyContent='center'>
+       <Grid item xs={4} justifyContent='center'
+       sx={{display:{xs:'none', sm:'flex'}}}
+       >
+       <Box display='flex' justifyContent='center' >
         <Image
         src='https://res.cloudinary.com/nahuelement/image/upload/v1666323990/u933pvjsh5fts6oarywu.png'
         width={300}
