@@ -60,7 +60,7 @@ const SummaryPage = () => {
             <Grid item xs={ 12 }
              sx={
                 {
-                    display:{xs:'flex',sm:'none'}
+                    display:{xs:'none',sm:'flex'}
                 }
             }
              display='flex' flexDirection='column'>

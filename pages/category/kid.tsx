@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import { Box, Typography } from '@mui/material';
 
 import { ShopLayout } from '../../components/layouts';
@@ -7,14 +7,21 @@ import { ProductList } from '../../components/products';
 import { useProducts } from '../../hooks';
 
 import { FullScreenLoading } from '../../components/ui';
-import { useEffect, useState } from 'react';
+import { useEffect, useState ,FC} from 'react';
 import anime from 'animejs'
+import { db } from '../../database';
+import { Product } from '../../models';
+import { IProduct } from '../../interfaces';
+
+interface Props {
+  products:IProduct[]
+}
 
 
-const KidPage: NextPage = () => {
+const KidPage: NextPage<Props> = ({products}) => {
 
 
-  const { products, isLoading } = useProducts('/products?gender=kid');
+
   const [isLoad, setIsLoad] = useState(false)
 
 
@@ -38,7 +45,7 @@ const KidPage: NextPage = () => {
 
          <Box
           sx={{
-            display:isLoad && !isLoading ?'flex':'none',
+            display:isLoad  ?'flex':'none',
 
             flexDirection:{xs:'column',sm:'row'}
           }}
@@ -66,7 +73,7 @@ const KidPage: NextPage = () => {
 
 
         {
-          isLoading
+          isLoad
             ? <FullScreenLoading />
             : <ProductList products={ products } />
         }
@@ -76,6 +83,42 @@ const KidPage: NextPage = () => {
 
     </ShopLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+
+
+  // const { gender = 'all' } = req.query;
+
+
+
+  // if ( gender !== 'all' && SHOP_CONSTANTS.validGenders.includes(`${gender}`) ) {
+  //     condition = { gender };
+  // }
+
+  await db.connect();
+  const products = await Product.find({condition:'kid'})
+                              .select('title images price inStock slug -_id')
+                              .lean();
+
+  await db.disconnect();
+  const updateProducts = products.map(product =>{
+      product.images = product.images.map( image => {
+          return image.includes('http') ? image : `${ process.env.HOST_NAME }products/${image}`
+      })
+
+      return product
+  })
+
+
+
+
+
+  return {
+    props: {
+      products:updateProducts
+    }
+  }
 }
 
 export default KidPage
