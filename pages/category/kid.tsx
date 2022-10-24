@@ -34,7 +34,7 @@ const KidPage: NextPage = () => {
 
   return (
     <ShopLayout title={'Teslo-Shop - Kids'} pageDescription={'Encuentra los mejores productos de Teslo para niños'}>
-        <br/>
+        
          <Box display='flex' justifyContent='center'>
          <Box
           sx={{
