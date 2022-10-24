@@ -72,11 +72,9 @@ const KidPage: NextPage<Props> = ({products}) => {
       </Box>
 
 
-        {
-          isLoad
-            ? <FullScreenLoading />
-            : <ProductList products={ products } />
-        }
+
+           <ProductList products={ products } />
+      
 
 
 
