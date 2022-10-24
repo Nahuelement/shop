@@ -38,7 +38,7 @@ const KidPage: NextPage = () => {
 
          <Box
           sx={{
-            display:isLoad?'flex':'none',
+            display:isLoad && !isLoading ?'flex':'none',
 
             flexDirection:{xs:'column',sm:'row'}
           }}
@@ -63,7 +63,7 @@ const KidPage: NextPage = () => {
         <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para niños</Typography>
 
       </Box>
-        
+
 
         {
           isLoading
