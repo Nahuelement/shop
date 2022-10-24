@@ -67,11 +67,11 @@ const SummaryPage = () => {
                     }}
                      >
                     <Grid container>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} >
                         <Typography variant='h2'>Resumen ({numberOfItems} { numberOfItems === 1 ? 'producto':'productos' })</Typography>
                         <Divider sx={{ my:1 }} />
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} >
                         <Grid display='flex' justifyContent='end'>
 
                             <NextLink href='/checkout/address' passHref>

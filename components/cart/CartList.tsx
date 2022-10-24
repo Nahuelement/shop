@@ -28,8 +28,16 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
         <>
             {
                 productsToShow.map( product => (
-                    <Grid container spacing={2}  key={ product.slug + product.size } sx={{ mb:1,maxHeigth:'100px' }}>
-                        <Grid item xs={7} sm={3}>
+                    <Grid container spacing={2}
+                    sx={{
+                        display:'flex',
+                        flexDirection:{xs:'center',sm:'start'},
+                        mb:1,maxHeigth:'100px'
+                    }}
+                     key={ product.slug + product.size } >
+                        <Grid item xs={12} sm={3}
+                            sx={{display:'flex', justifyContent:'center'}}
+                        >
                             {/* TODO: llevar a la página del producto */}
                             <NextLink href={`/product/${ product.slug }`} passHref>
                                 <Link>
@@ -44,7 +52,9 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                 </Link>
                             </NextLink>
                         </Grid>
-                        <Grid item xs={7}>
+                        <Grid item xs={10} sm={3}
+                            sx={{display:'flex', justifyContent:'center'}}
+                        >
                             <Box display='flex' flexDirection='column' pt={9}>
                                 <Typography variant='body1'>{ product.title }</Typography>
                                 <Typography variant='body1'>Talla: <strong>{ product.size }</strong></Typography>
@@ -60,13 +70,14 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                         />
                                     )
                                     : (
-                                        <Typography sx={{mt:'-3vh'}} variant='h5'>{ product.quantity } { product.quantity > 1 ? 'productos':'producto' }</Typography>
+                                        <Typography className='fontStyle' sx={{mt:'-3vh'}} variant='h5'>{ product.quantity } { product.quantity > 1 ? 'productos':'producto' }</Typography>
                                     )
                                 }
 
                             </Box>
                         </Grid>
-                        <Grid item xs={2} display='flex'  alignItems='center' flexDirection='column'>
+                        <Grid item xs={2} sm={3}
+                            sx={{display:'flex', justifyContent:'center'}} display='flex'  alignItems='center' flexDirection='column'>
                             <Box pt={9}>
                             <Typography variant='subtitle1'>{ `$${ product.price }` }</Typography>
 
