@@ -45,7 +45,7 @@ const KidPage: NextPage<Props> = ({products}) => {
 
          <Box
           sx={{
-            display:isLoad  ?'flex':'none',
+            display:'flex',
 
             flexDirection:{xs:'column',sm:'row'}
           }}
