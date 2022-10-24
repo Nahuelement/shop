@@ -38,7 +38,7 @@ export const Navbar = () => {
 
 
      { (asPath !== '/')?
-        <Box sx={{ display:{ xs: 'none', sm: 'flex' },width:'30vw' }}
+        <Box sx={{ display:{ xs: 'none', sm: 'flex' ,zIndex:99},width:'30vw' }}
         justifyContent='space-around'
         pt={1}
 
@@ -133,7 +133,7 @@ export const Navbar = () => {
                 <Button onClick={ toggleSideMenu }>
                     <MenuIcon/>
                 </Button>
-        
+
             </Toolbar>
         </AppBar>
     )

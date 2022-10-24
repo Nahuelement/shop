@@ -21,20 +21,23 @@ export const ProductCard: FC<Props> = ({ product }) => {
     }, [isHovered, product.images])
 
     return (
-      <Grid item
+      <Grid
+       item
+
             xs={6}
             sm={ 4 }
             lg={3}
             pt={5}
+            mb={5}
+            boxShadow={2}
             onMouseEnter={ () => setIsHovered(true) }
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-        //   sx={{height:'65vh'}}
+        sx={{height:{xs:'50vh',sm:'65vh'}}}
           >
-            {
-            product &&
-            <>
+
+
               <NextLink href={`/product/${ product.slug }`} passHref prefetch={ false }>
                 <Link>
 
@@ -46,7 +49,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                                 <Chip
                                     color="secondary"
                                     label="Sin stock disponible"
-                                    sx={{ position: 'absolute', zIndex: 99, right:'10%',left:'10%', top:'50%', translate:'(-50%,-50%)'}}
+                                    sx={{ position: 'absolute', zIndex: 1, right:'10%',left:'10%', top:'50%', translate:'(-50%,-50%)'}}
                                 />
                             )
                         }
@@ -62,11 +65,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                             onLoad={ () => setIsImageLoaded(true) }
                         />
 
-                    </CardActionArea>
-
-
-
-              <Box sx={{ mt: 2, display: 'flex'}} className='fadeIn'
+          <Box sx={{ mt: 2, display: 'flex'}} className='fadeIn'
                 flexDirection='column'
 
               >
@@ -75,12 +74,15 @@ export const ProductCard: FC<Props> = ({ product }) => {
 
               <Typography color='black' fontWeight={600} pl={1}>{ `$ ${product.price}` }</Typography>
           </Box>
+                    </CardActionArea>
+
+
+
+
 
           </Link>
               </NextLink>
-              <br/>
-              </>
-                    }
+
           </Card>
 
 

@@ -26,8 +26,8 @@ const HomePage: NextPage<Props> = ({products}) => {
   return (
     <ShopLayout title={'Shoping - Home'} pageDescription={'Encuentras las mejores marcas en shoping'}>
         {/* <Typography variant='h1' component='h1'>Tienda</Typography> */}
-        <Grid  container display='flex' xs={12} justifyContent='center' >
-        <Grid item justifyContent='center' xs={7}>
+        <Grid  container display='flex' justifyContent='center' >
+        <Grid item  display='flex' justifyContent='center' xs={12}>
         <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Todos los productos</Typography>
         </Grid>
         </Grid>

@@ -14,6 +14,7 @@ export const SubBar = () => {
     sx={{
  marginTop:{xs:'-34vh',sm:'2vh',lg:'2vh'},
     height:'1vh',
+    
     }}
 
 >

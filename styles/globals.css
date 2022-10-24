@@ -111,17 +111,20 @@ background: #f9f8fc;
 }
 .ml15 {
   font-weight: 700;
-  font-size: 3.1em;
+
+  padding-top: 5vh;
   text-transform: uppercase;
   letter-spacing: 0.1em!important;
   color:#0093E9;
   font-family: Permanent Marker, serif!important;
-  z-index: 20;
+
 }
 
 .ml15 .word {
   display: inline-block;
   font-family: Permanent Marker, serif;
+  font-size: 3.2em!important;
+  z-index: 1!important;
 
 }
 .titleAllproduct{
