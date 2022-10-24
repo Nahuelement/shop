@@ -92,12 +92,12 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 
 
 
-        <Grid container className='fadeIn'>
+        <Grid container display='flex' sx={{justifyContent:'center'}} className='fadeIn'>
             <Grid item xs={ 12 } sm={ 7 }>
                 <CartList products={  order.orderItems } />
             </Grid>
             <Grid item xs={ 12 } sm={ 5 }
-            sx={{justifyContent:'center'}}>
+            >
                 <Card className='summary-card'>
                     <CardContent>
                         <Typography variant='h2'>Resumen ({ order.numberOfItems } { order.numberOfItems > 1 ? 'productos': 'producto'})</Typography>

@@ -34,7 +34,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-        sx={{height:{xs:'320px',sm:'390px'}}}
+        sx={{height:{xs:'290px',sm:'390px'}}}
           >
 
 
@@ -49,7 +49,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                                 <Chip
                                     color="secondary"
                                     label="Sin stock disponible"
-                                    sx={{ position: 'absolute', zIndex: 1, right:'10%',left:'10%', top:'50%', translate:'(-50%,-50%)'}}
+                                    sx={{ position: 'absolute', zIndex: 1, right:'10%',left:'10%', top:'25%', translate:'(-50%,-50%)'}}
                                 />
                             )
                         }
@@ -66,7 +66,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                             onLoad={ () => setIsImageLoaded(true) }
                         />
 
-          <Box sx={{ mt: 2, display: 'flex'}} className='fadeIn'
+          <Box sx={{ mt: 2, display: 'flex',justifyContent:'space-between'}} className='fadeIn'
                 flexDirection='column'
 
               >
