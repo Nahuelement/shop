@@ -2,6 +2,8 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import styles from './Carousel.module.css'
+import { Box } from "@mui/material";
+
 
 
 
@@ -10,7 +12,7 @@ import styles from './Carousel.module.css'
 export const SpotCarousel = () => {
   return (
 
-    <div className="slider-container"  style={{marginTop:'-26vh',width:'100%',padding:'0px'}}>
+    <Box className="slider-container"  sx={{marginTop:{xs:'-32vh',sm:'-26vh'},width:'100%',padding:'0px'}}>
     <Carousel
     className={ styles['each-slide'] }
      autoPlay
@@ -44,8 +46,8 @@ export const SpotCarousel = () => {
                     {/* <p className="legend">Legend 3</p> */}
                 </div>
             </Carousel>
-            
 
-            </div>
+
+            </Box>
   )
 }

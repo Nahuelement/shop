@@ -35,30 +35,35 @@ const MenPage: NextPage = () => {
 
   return (
     <ShopLayout title={'Teslo-Shop - Men'} pageDescription={'Encuentra los mejores productospara ellos'}>
+      <br/>
        <Box display='flex' justifyContent='center' >
 
 
-          <h1
-          style={{
-            display:isLoad?'flex':'none'
+       <Box
+          sx={{
+            display:isLoad?'flex':'none',
+
+            flexDirection:{xs:'column',sm:'row'}
           }}
           className="ml15">
 
-        <Typography className="word" variant='h1' sx={{
-          mb: 2,
-           pt:3,
-           marginRight:{xs:'5vw',sm:'0vw'},
-           marginTop:{xs:'4vw',sm:'0vw'}
-          }}>Productos &nbsp;</Typography>
+        <Typography
+
+        className="word" variant='h1' sx={{
+          mb: 0,
+          pt:0,
 
 
-        <Typography className="word"  variant='h1' sx={{ mb: 2, pt:3}}>de moda &nbsp;</Typography>
+
+           }}>Productos &nbsp;</Typography>
 
 
-        <Typography className="word" variant='h1' sx={{ mb: 2, pt:3}}>para ellos</Typography>
+        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:0}}>de moda &nbsp;</Typography>
 
-      </h1>
 
+        <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para ellos</Typography>
+
+      </Box>
 
         {/* <Typography variant='h1' sx={{ mb: 2, pt:3}}>Productos de moda para ellos</Typography> */}
         </Box>

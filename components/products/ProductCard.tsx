@@ -56,6 +56,9 @@ export const ProductCard: FC<Props> = ({ product }) => {
                             className='fadeIn'
                             image={ productImage }
                             alt={ product.title }
+                            sx={{
+                              borderRadius:2
+                            }}
                             onLoad={ () => setIsImageLoaded(true) }
                         />
 
