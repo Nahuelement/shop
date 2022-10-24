@@ -34,7 +34,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-        sx={{height:{xs:'320px',sm:'380px'}}}
+        sx={{height:{xs:'320px',sm:'390px'}}}
           >
 
 
@@ -61,7 +61,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                             alt={ product.title }
                             sx={{
                               borderRadius:2,
-                              padding:1
+                              padding:{xs:0,sm:1}
                             }}
                             onLoad={ () => setIsImageLoaded(true) }
                         />

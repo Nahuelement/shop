@@ -123,7 +123,7 @@ background: #f9f8fc;
 .ml15 .word {
   display: inline-block;
   font-family: Permanent Marker, serif;
-  font-size: 2.5em!important;
+  font-size: 1.5em!important;
   z-index: 1!important;
 
 }
@@ -131,7 +131,7 @@ background: #f9f8fc;
   font-family: Permanent Marker, serif!important;
   color:#0093E9;
   font-weight: 700;
-  font-size: 1.6em!important;
+  font-size: 1.7em!important;
   text-transform: uppercase;
   letter-spacing: 0.1em!important;
 
