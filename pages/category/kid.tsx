@@ -9,7 +9,7 @@ import { useProducts } from '../../hooks';
 import { FullScreenLoading } from '../../components/ui';
 import { useEffect, useState ,FC} from 'react';
 import anime from 'animejs'
-import { db } from '../../database';
+import { db, SHOP_CONSTANTS } from '../../database';
 import { Product } from '../../models';
 import { IProduct } from '../../interfaces';
 
@@ -74,7 +74,7 @@ const KidPage: NextPage<Props> = ({products}) => {
 
 
            <ProductList products={ products } />
-      
+
 
 
 
@@ -86,16 +86,13 @@ const KidPage: NextPage<Props> = ({products}) => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
 
 
-  // const { gender = 'all' } = req.query;
 
 
 
-  // if ( gender !== 'all' && SHOP_CONSTANTS.validGenders.includes(`${gender}`) ) {
-  //     condition = { gender };
-  // }
+
 
   await db.connect();
-  const products = await Product.find({condition:'kid'})
+  const products = await Product.find({gender:'kid'})
                               .select('title images price inStock slug -_id')
                               .lean();
 
