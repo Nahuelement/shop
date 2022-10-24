@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
-import { Box, Typography } from '@mui/material';
+import type { GetStaticProps, NextPage } from 'next';
+import { Box, Grid, Typography } from '@mui/material';
 
 import { ShopLayout } from '../../components/layouts';
 
@@ -9,12 +9,19 @@ import { useProducts } from '../../hooks';
 import { FullScreenLoading } from '../../components/ui';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
+import { Product } from '../../models';
+import { IProduct } from '../../interfaces';
+import { db } from '../../database';
+
+interface Props {
+  products:IProduct[]
+}
 
 
-const WomenPage: NextPage = () => {
+const WomenPage: NextPage<Props> = ({products}) => {
 
 
-  const { products, isLoading } = useProducts('/products?gender=women');
+  // const { products, isLoading } = useProducts('/products?gender=women');
   const [isLoad, setIsLoad] = useState(false)
 
 
@@ -36,14 +43,12 @@ const WomenPage: NextPage = () => {
     <ShopLayout title={'Teslo-Shop - Women'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
         {/* <Typography variant='h1' component='h1'>Mujeres</Typography> */}
 
-        <Box display='flex' justifyContent='center'>
         <Box
-          sx={{
-            display:isLoad?'flex':'none',
-
-            flexDirection:{xs:'column',sm:'row'}
+          sx={{ display:{sx:'none',sm:'flex'}, flexDirection:'row'
           }}
-          className="ml15">
+          className="ml15"
+          justifyContent='center'
+          >
 
         <Typography
 
@@ -62,19 +67,52 @@ const WomenPage: NextPage = () => {
         <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para ellas</Typography>
 
       </Box>
-        </Box>
+      <Grid  container sx={{display:{sx:'flex',sm:'none'}
 
-        {
-          isLoading
-            ? <FullScreenLoading />
-            : <ProductList products={ products } />
-        }
+      }} xs={12} justifyContent='center' >
+        <Grid item justifyContent='center' xs={7}>
+        <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos de moda para ella</Typography>
+        </Grid>
+        </Grid>
+
+
+
+        <ProductList products={ products } />
+
 
 
 
 
     </ShopLayout>
   )
+}
+export const getStaticProps: GetStaticProps = async (ctx) => {
+
+
+
+  await db.connect();
+  const products = await Product.find({gender:'men'})
+                              .select('title images price inStock slug -_id')
+                              .lean();
+
+  await db.disconnect();
+  const updateProducts = products.map(product =>{
+      product.images = product.images.map( image => {
+          return image.includes('http') ? image : `${ process.env.HOST_NAME }products/${image}`
+      })
+
+      return product
+  })
+
+
+
+
+
+  return {
+    props: {
+      products:updateProducts
+    }
+  }
 }
 
 export default WomenPage

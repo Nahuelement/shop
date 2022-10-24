@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 import { ShopLayout } from '../components/layouts';
 
 import { ProductList } from '../components/products';
-import { useProducts } from '../hooks';
+
 
 import { FullScreenLoading } from '../components/ui';
 import { GetStaticProps } from 'next'
@@ -26,9 +26,11 @@ const HomePage: NextPage<Props> = ({products}) => {
   return (
     <ShopLayout title={'Shoping - Home'} pageDescription={'Encuentras las mejores marcas en shoping'}>
         {/* <Typography variant='h1' component='h1'>Tienda</Typography> */}
-        <Box display='flex' justifyContent='center' width='90vw'>
-        <Typography className='titleAllproduct' variant='h1' sx={{ mb: 1 }}>Todos los productos</Typography>
-        </Box>
+        <Grid  container display='flex' xs={12} justifyContent='center' >
+        <Grid item justifyContent='center' xs={7}>
+        <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Todos los productos</Typography>
+        </Grid>
+        </Grid>
 
         {/* {
           isLoading
