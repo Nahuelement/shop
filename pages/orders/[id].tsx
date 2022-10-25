@@ -66,33 +66,17 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 
   return (
     <ShopLayout title='Resumen de la orden' pageDescription={'Resumen de la orden'}>
-        <Typography variant='h1' component='h1'>Orden: { order._id }</Typography>
-
-        {
-            order.isPaid
-            ? (
-                <Chip
-                    sx={{ my: 2 }}
-                    label="Orden ya fue pagada"
-                    variant='outlined'
-                    color="success"
-                    icon={ <CreditScoreOutlined /> }
-                />
-            ):
-            (
-                <Chip
-                    sx={{ my: 2 }}
-                    label="Pendiente de pago"
-                    variant='outlined'
-                    color="error"
-                    icon={ <CreditCardOffOutlined /> }
-                />
-            )
-        }
+        {/* <Typography variant='h1' component='h1'>Orden: { order._id }</Typography> */}
 
 
 
-        <Grid container  className='fadeIn'>
+
+
+
+        <Grid container     sx={{
+                display:'flex',
+                justifyContent:'center'
+            }} className='fadeIn'>
             <Grid item
             sx={{
                 display:'flex',

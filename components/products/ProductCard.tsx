@@ -36,7 +36,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-        sx={{height:{xs:'295px',sm:'390px'}}}
+            sx={{ maxWidth: 345 }}
           >
 
 

@@ -20,11 +20,12 @@ export const SpotCarousel = () => {
      interval={6500}
      emulateTouch={false}
      showArrows={false}
-     showIndicators={true}
+     showIndicators={false}
      stopOnHover={false}
      transitionTime={1500}
      showThumbs={false}
      dynamicHeight={false}
+     swipeable={false}
 
 
 
