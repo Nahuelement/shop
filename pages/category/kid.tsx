@@ -43,8 +43,8 @@ const KidPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Teslo-Shop - Kids'} pageDescription={'Encuentra los mejores productos de Teslo para niños'}>
 
 
-      <Box
-          sx={{ display:{xs:'none',sm:'flex'}, flexDirection:'row'
+      <Box pt={5}
+          sx={{ display:{xs:'none',sm:isLoad?'flex':'none'}, flexDirection:'row'
           }}
           className="ml15"
           justifyContent='center'
@@ -54,30 +54,31 @@ const KidPage: NextPage<Props> = ({products}) => {
 
         className="word" variant='h1' sx={{
           mb: 0,
-          pt:0,
-          fontSize:{sm:'2.3em'}
+          pt:9,
+          fontSize:{sm:'2.9em'}
 
 
 
            }}>Productos &nbsp;</Typography>
 
 
-        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:0,fontSize:{sm:'2.3em'}}}>de moda &nbsp;</Typography>
+        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:9,fontSize:{sm:'2.9em'}}}>de moda &nbsp;</Typography>
 
 
-        <Typography className="word" variant='h1' sx={{ mb: 0, pt:0, fontSize:{sm:'2.3em'}}}>para niños</Typography>
+        <Typography className="word" variant='h1' sx={{ mb: 0, pt:9, fontSize:{sm:'2.9em'}}}>para niños</Typography>
 
       </Box>
 
-      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}}  display='flex' justifyContent='center' >
+      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}} pt={10} display='flex' justifyContent='center' >
         <Grid item  display='block' justifyContent='center' xs={10}>
         <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos para niños</Typography>
         </Grid>
         </Grid>
 
 
-
+           <Grid>
            <ProductList products={ products } />
+           </Grid>
 
 
 
@@ -97,7 +98,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   await db.connect();
   const products = await Product.find({gender:'kid'})
-                              .select('title images price inStock slug -_id')
+                              .select('title images description price inStock slug -_id')
                               .lean();
 
   await db.disconnect();

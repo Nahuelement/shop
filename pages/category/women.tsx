@@ -43,8 +43,8 @@ const WomenPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Teslo-Shop - Women'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
         {/* <Typography variant='h1' component='h1'>Mujeres</Typography> */}
 
-        <Box
-          sx={{ display:{xs:'none',sm:'flex'}, flexDirection:'row'
+        <Box pt={5}
+          sx={{ display:{xs:'none',sm:isLoad?'flex':'none'}, flexDirection:'row'
           }}
           className="ml15"
           justifyContent='center'
@@ -54,20 +54,21 @@ const WomenPage: NextPage<Props> = ({products}) => {
 
         className="word" variant='h1' sx={{
           mb: 0,
-          pt:0,
+          pt:9,
+          fontSize:{sm:'2.9em'}
 
 
 
            }}>Productos &nbsp;</Typography>
 
 
-        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:0}}>de moda &nbsp;</Typography>
+        <Typography className="word"  variant='h1' sx={{ mb: 0,pt:9,fontSize:{sm:'2.9em'}}}>de moda &nbsp;</Typography>
 
 
-        <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para ellas</Typography>
+        <Typography className="word" variant='h1' sx={{ mb: 0,pt:9,fontSize:{sm:'2.9em'}}}>para ellas</Typography>
 
       </Box>
-      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}}  display='flex' justifyContent='center' >
+      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}} pt={10}  display='flex' justifyContent='center' >
         <Grid item  display='flex' justifyContent='center' xs={12}>
         <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos para ellas</Typography>
         </Grid>
@@ -90,7 +91,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   await db.connect();
   const products = await Product.find({gender:'women'})
-                              .select('title images price inStock slug -_id')
+                              .select('title images description price inStock slug -_id')
                               .lean();
 
   await db.disconnect();

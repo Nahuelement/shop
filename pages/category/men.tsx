@@ -44,8 +44,8 @@ const MenPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Teslo-Shop - Men'} pageDescription={'Encuentra los mejores productospara ellos'}>
 
 
-<Box
-          sx={{ display:{xs:'none',sm:'flex'}, flexDirection:'row'
+<Box pt={5}
+          sx={{ display:{xs:'none',sm:isLoad?'flex':'none'}, flexDirection:'row'
           }}
           className="ml15"
           justifyContent='center'
@@ -55,20 +55,21 @@ const MenPage: NextPage<Props> = ({products}) => {
 
         className="word" variant='h1' sx={{
           mb: 0,
-          pt:0,
+          pt:9,
+          fontSize:{sm:'2.9em'}
 
 
 
            }}>Productos &nbsp;</Typography>
 
 
-        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:0}}>de moda &nbsp;</Typography>
+        <Typography className="word"  variant='h1' sx={{ mb: 0,pt:9,fontSize:{sm:'2.9em'}}}>de moda &nbsp;</Typography>
 
 
-        <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para ellos</Typography>
+        <Typography className="word" variant='h1' sx={{ mb: 0, pt:9,fontSize:{sm:'2.9em'}}}>para ellos</Typography>
 
       </Box>
-      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}}  display='flex' justifyContent='center' >
+      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}} pt={10}  display='flex' justifyContent='center' >
         <Grid item  display='flex' justifyContent='center' xs={12}>
         <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos para ellos</Typography>
         </Grid>
@@ -133,7 +134,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   await db.connect();
   const products = await Product.find({gender:'men'})
-                              .select('title images price inStock slug -_id')
+                              .select('title images description price inStock slug -_id')
                               .lean();
 
   await db.disconnect();
