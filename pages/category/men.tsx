@@ -69,11 +69,14 @@ const MenPage: NextPage<Props> = ({products}) => {
         <Typography className="word" variant='h1' sx={{ mb: 0, pt:9,fontSize:{sm:'2.9em'}}}>para ellos</Typography>
 
       </Box>
-      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}} pt={10}  display='flex' justifyContent='center' >
-        <Grid item  display='flex' justifyContent='center' xs={12}>
+      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}} pt={10} display='flex' justifyContent='center' >
+        <Grid item  display='block' justifyContent='center' xs={10}>
         <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos para ellos</Typography>
         </Grid>
         </Grid>
+
+
+        
 
 
 
