@@ -80,7 +80,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                 >
 
               <Typography color='primary'  pb={1} pl={1} fontWeight={700}>{ product.title }</Typography>
-
+              <Typography color='gray' fontWeight={500} pl={1}>{ ` ${product.description}`.substring(0,21) }</Typography>
               <Typography color='black' fontWeight={600} pl={1}>{ `$ ${product.price}` }</Typography>
           </CardActions>
 

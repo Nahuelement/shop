@@ -66,7 +66,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   await db.connect();
   const products = await Product.find()
-                              .select('title images price inStock slug -_id')
+                              .select('title images description price inStock slug -_id')
                               .lean();
 
   await db.disconnect();

@@ -57,9 +57,9 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
             }
 
         <main style={{
-            margin: '80px auto',
+            
             maxWidth: '1440px',
-            padding: '0px 30px'
+
         }}>
 
 
@@ -70,7 +70,7 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
         {/* Footer */}
 
         {/* <footer>
-            
+
         </footer> */}
 
     </>

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { IProduct } from '../../interfaces'
 import { ProductCard } from '.'
 
@@ -11,7 +11,7 @@ interface Props {
 export const ProductList: FC<Props> = ({ products }) => {
 
   return (
-    <Grid container spacing={{xs:1,sm:2}} pt={0}>
+    <Grid container spacing={{xs:0,sm:3}} paddingLeft={{xs:1,sm:4}} pt={8} xs={12}  display='flex' justifyContent='center' alignItems='center'>
 
         {
             products.map( product => (
@@ -21,6 +21,7 @@ export const ProductList: FC<Props> = ({ products }) => {
                 />
             ))
         }
+
 
     </Grid>
   )
