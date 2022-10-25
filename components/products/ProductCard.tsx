@@ -1,6 +1,6 @@
 import { FC, useMemo, useState } from 'react';
 import NextLink from 'next/link';
-import { Grid, Card, CardActionArea, CardMedia, Box, Typography, Link, Chip } from '@mui/material'
+import { Grid, Card, CardActionArea, CardMedia, Box, Typography, Link, Chip, CardActions } from '@mui/material'
 
 import { IProduct } from '../../interfaces'
 
@@ -27,14 +27,16 @@ export const ProductCard: FC<Props> = ({ product }) => {
             xs={6}
             sm={ 4 }
             lg={3}
-            pt={5}
+            sx={{
+                marginTop:2
+            }}
 
 
             onMouseEnter={ () => setIsHovered(true) }
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-        sx={{height:{xs:'290px',sm:'390px'}}}
+        sx={{height:{xs:'295px',sm:'390px'}}}
           >
 
 
@@ -49,7 +51,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                                 <Chip
                                     color="secondary"
                                     label="Sin stock disponible"
-                                    sx={{ position: 'absolute', zIndex: 1, right:'10%',left:'10%', top:'25%', translate:'(-50%,-50%)'}}
+                                    sx={{ position: 'absolute', zIndex: 1, right:'10%',left:'10%', top:'45%', translate:'(-50%,-50%)'}}
                                 />
                             )
                         }
@@ -66,16 +68,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                             onLoad={ () => setIsImageLoaded(true) }
                         />
 
-          <Box sx={{ mt: 2, display: 'flex',justifyContent:'space-between'}} className='fadeIn'
-                flexDirection='column'
-
-              >
-
-              <Typography pb={1} pl={1} fontWeight={700}>{ product.title }</Typography>
-
-              <Typography color='black' fontWeight={600} pl={1}>{ `$ ${product.price}` }</Typography>
-          </Box>
-                    </CardActionArea>
+    </CardActionArea>
 
 
 
@@ -83,6 +76,13 @@ export const ProductCard: FC<Props> = ({ product }) => {
 
           </Link>
               </NextLink>
+          <CardActions sx={{ mt: 1, display: 'flex',flexDirection:'column',justifyContent:'space-evenly',alignItems:'flex-start'}} className='fadeIn'
+                >
+
+              <Typography color='primary'  pb={1} pl={1} fontWeight={700}>{ product.title }</Typography>
+
+              <Typography color='black' fontWeight={600} pl={1}>{ `$ ${product.price}` }</Typography>
+          </CardActions>
 
           </Card>
 

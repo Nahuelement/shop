@@ -92,11 +92,21 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 
 
 
-        <Grid container display='flex' sx={{justifyContent:'center'}} className='fadeIn'>
-            <Grid item xs={ 12 } sm={ 7 }>
+        <Grid container  className='fadeIn'>
+            <Grid item
+            sx={{
+                display:'flex',
+                justifyContent:'center'
+            }}
+            xs={ 12 } sm={ 7 }>
                 <CartList products={  order.orderItems } />
             </Grid>
-            <Grid item xs={ 12 } sm={ 5 }
+            <Grid item
+             sx={{
+                display:'flex',
+                justifyContent:'center'
+            }}
+            xs={ 12 } sm={ 5 }
             >
                 <Card className='summary-card'>
                     <CardContent>
@@ -113,6 +123,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                         <Typography>{ shippingAddress.city }, { shippingAddress.zip }</Typography>
                         <Typography>{ shippingAddress.country }</Typography>
                         <Typography>{ shippingAddress.phone }</Typography>
+
 
                         <Divider sx={{ my:1 }} />
 

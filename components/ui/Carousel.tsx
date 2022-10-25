@@ -18,8 +18,9 @@ export const SpotCarousel = () => {
      autoPlay
      infiniteLoop
      interval={6500}
+     emulateTouch={false}
      showArrows={false}
-     showIndicators={false}
+     showIndicators={true}
      stopOnHover={false}
      transitionTime={1500}
      showThumbs={false}

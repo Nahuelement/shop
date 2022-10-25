@@ -55,16 +55,17 @@ const KidPage: NextPage<Props> = ({products}) => {
         className="word" variant='h1' sx={{
           mb: 0,
           pt:0,
+          fontSize:{sm:'2.3em'}
 
 
 
            }}>Productos &nbsp;</Typography>
 
 
-        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:0}}>de moda &nbsp;</Typography>
+        <Typography className="word"  variant='h1' sx={{ mb: 0, pt:0,fontSize:{sm:'2.3em'}}}>de moda &nbsp;</Typography>
 
 
-        <Typography className="word" variant='h1' sx={{ mb: 0, pt:0}}>para niños</Typography>
+        <Typography className="word" variant='h1' sx={{ mb: 0, pt:0, fontSize:{sm:'2.3em'}}}>para niños</Typography>
 
       </Box>
 

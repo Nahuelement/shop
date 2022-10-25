@@ -51,7 +51,7 @@ const SummaryPage = () => {
 
   return (
     <ShopLayout title='Resumen de orden' pageDescription={'Resumen de la orden'}>
-        <Typography variant='h1' component='h1'>Resumen de la orden</Typography>
+        <Typography variant='h1'sx={{marginBottom:2}} component='h1'>Resumen de la orden</Typography>
 
         <Grid container>
             <Grid item xs={ 12 } >
@@ -74,19 +74,16 @@ const SummaryPage = () => {
                      >
                     <Grid container>
                         <Grid item xs={12} >
-                        <Typography variant='h2'>Resumen ({numberOfItems} { numberOfItems === 1 ? 'producto':'productos' })</Typography>
-                        <Divider sx={{ my:1 }} />
-                        </Grid>
-                        <Grid item xs={12} >
-                        <Grid display='flex' justifyContent='end'>
 
-                            <NextLink href='/checkout/address' passHref>
+                        <Box display='flex' justifyContent='end'>
+                        <NextLink href='/checkout/address' passHref>
                                 <Link underline='always'>
                                     Editar
                                 </Link>
                             </NextLink>
+                        </Box>
                         </Grid>
-                        </Grid>
+
                         <Grid item xs={12}>
                         <Typography variant='subtitle1'>Dirección de entrega</Typography>
                         </Grid>
@@ -124,8 +121,8 @@ const SummaryPage = () => {
                      <Grid item xs={12}>
                         <OrderSummary />
                     </Grid>
-                        <Grid item xs={12} display="flex" flexDirection="row" justifyContent='center'>
-                        <Box sx={{ mt: 3 }} >
+                        <Grid item xs={12} display="flex" flexDirection="row" justifyContent='start'>
+                        <Box sx={{ mt: 3 }} display="flex" flexDirection="row" justifyContent='center' >
                             <Button
                                 color="secondary"
                                 className='circular-btn'
@@ -191,7 +188,7 @@ const SummaryPage = () => {
 
                         <OrderSummary />
 
-                        <Box sx={{ mt: 3 }} display="flex" flexDirection="column">
+                        <Box sx={{ mt: 3 }}  display="flex" flexDirection="row" justifyContent='center'>
                             <Button
                                 color="secondary"
                                 className='circular-btn'
