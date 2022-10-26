@@ -72,7 +72,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
         </Grid>
 
         <Grid item xs={ 12 } sm={ 6} sx={{paddingTop:{xs:'-7vh',sm:'none'}}}>
-          <Box display='flex'  flexDirection='column' paddingLeft={{xs:3,sm:0}}>
+          <Box display='flex'  flexDirection='column' paddingLeft={{xs:2,sm:0}}>
 
             {/* titulos */}
             <Typography variant='h1' component='h1'>{ product.title }</Typography>
