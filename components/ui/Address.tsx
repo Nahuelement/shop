@@ -78,17 +78,17 @@ export const Address = () => {
   return (
     <form onSubmit={ handleSubmit( onSubmitAddress ) }>
 
-        <Box display='flex' justifyContent='center'>
-            <Typography variant="h1" component='h1'>Dirección</Typography>
+        <Box display='flex' flexDirection='row' justifyContent='center'  sx={{paddingTop:'-25vh'}}>
+            <Typography color='white' variant="h1" className='fontStyle' component='h1'>Dirección</Typography>
          </Box>
-            <Grid container spacing={ 4 } sx={{ mt: 0 }} >
+            <Grid container spacing={ 4 } sx={{ mt: 0 ,p:4}} >
 
                 <Grid item xs={12} sm={ 6 }  >
                     <TextField
                         label='Nombre'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('firstName', {
                             required: 'Este campo es requerido'
                         })}
@@ -101,7 +101,7 @@ export const Address = () => {
                         label='Apellido'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('lastName', {
                             required: 'Este campo es requerido'
                         })}
@@ -115,7 +115,7 @@ export const Address = () => {
                         label='Dirección'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('address', {
                             required: 'Este campo es requerido'
                         })}
@@ -128,7 +128,7 @@ export const Address = () => {
                         label='Dirección 2 (opcional)'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('address2')}
                     />
                 </Grid>
@@ -138,7 +138,7 @@ export const Address = () => {
                         label='Código Postal'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('zip', {
                             required: 'Este campo es requerido'
                         })}
@@ -151,7 +151,7 @@ export const Address = () => {
                         label='Ciudad'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('city', {
                             required: 'Este campo es requerido'
                         })}
@@ -167,7 +167,7 @@ export const Address = () => {
                             variant="filled"
                             label="País"
                             fullWidth
-                            sx={{boxShadow:2}}
+                            sx={{boxShadow:2,background:'whitesmoke'}}
                             // defaultValue={ Cookies.get('country') || countries[0].code }
                             { ...register('country', {
                                 required: 'Este campo es requerido'
@@ -191,7 +191,7 @@ export const Address = () => {
                         label='Teléfono'
                         variant="filled"
                         fullWidth
-                        sx={{boxShadow:2}}
+                        sx={{boxShadow:2,background:'whitesmoke'}}
                         { ...register('phone', {
                             required: 'Este campo es requerido'
                         })}
@@ -203,11 +203,11 @@ export const Address = () => {
             </Grid>
 
 
-            <Box sx={{ mt: 5, paddingBottom:{xs:'5vh',sm:'0vh'} }} display='flex' gap={4} justifyContent='center'>
-                <Button type="submit" color="secondary" className="circular-btn" size="large">
+            <Box sx={{ mt: 0, paddingBottom:{xs:'5vh',sm:'0vh'} }} display='flex' gap={3} justifyContent='center'>
+                <Button type="submit" color="secondary" sx={{boxShadow:3,marginBottom:3}} className="circular-btn" size="large">
                     Revisar pedido
                 </Button>
-                <Button type="submit" onClick={()=>setPay(true)} color="secondary" className="circular-btn" size="large">
+                <Button type="submit" onClick={()=>setPay(true)} color="secondary" sx={{boxShadow:3,marginBottom:3}} className="circular-btn" size="large">
                     Realizar pago
                 </Button>
             </Box>

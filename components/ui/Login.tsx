@@ -58,7 +58,7 @@ export const Login = () => {
                 <Box sx={{ width: 350, padding:'10px 20px' }} marginTop='5vh'>
                     <Grid container spacing={2} marginBottom='29vh' marginLeft='-3vw'>
                         <Grid item xs={12}>
-                            <Typography variant='h1' component="h1">Iniciar Sesión</Typography>
+                            <Typography color='whitesmoke' variant="h1" className='fontStyle' component="h1">Iniciar Sesión</Typography>
                             <Chip
 
                                 label="Contraseña o usuario incorrecto"

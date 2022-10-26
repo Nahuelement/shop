@@ -63,7 +63,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
   return (
     <ShopLayout title={ product.title } pageDescription={ product.description }>
 
-      <Grid container spacing={10}>
+      <Grid container spacing={6}>
 
         <Grid item xs={12} sm={ 6 } >
           <ProductSlideshow
@@ -71,8 +71,8 @@ const ProductPage:NextPage<Props> = ({ product }) => {
           />
         </Grid>
 
-        <Grid item xs={ 12 } sm={ 6} sx={{paddingTop:{xs:'-7vh',sm:'none'}}}>
-          <Box display='flex'  flexDirection='column' paddingLeft={{xs:2,sm:0}}>
+        <Grid item xs={ 12 } sm={ 6} sx={{marginTop:{xs:'-6vh',sm:'22vh'}}}>
+          <Box display='flex'  flexDirection='column' paddingLeft={{xs:3,sm:0}} paddingRight={{xs:0,sm:3}}>
 
             {/* titulos */}
             <Typography variant='h1' component='h1'>{ product.title }</Typography>

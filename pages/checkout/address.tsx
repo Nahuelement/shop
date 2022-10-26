@@ -72,14 +72,9 @@ const AddressPage = () => {
     <ShopLayout title="Dirección" pageDescription="Confirmar dirección del destino">
         <Grid  container xs={12} display='flex' justifyContent='start' alignItems='center'
         sx={{
-          height: '100vh',
-          backgroundSize: 'cover',
-          backgroundImage:'url(https://res.cloudinary.com/nahuelement/image/upload/v1666506946/ey1orfvaihx3uvw93m2r.svg)',
-          marginBottom:'-10vh',
-          marginTop:'-10vh'
-
-
+          height: '100%',
         }}
+        className='backgroundAnimated'
         >
         <Grid item xs={12} sm={8}>
        <Address />

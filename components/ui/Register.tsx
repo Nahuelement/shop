@@ -47,7 +47,7 @@ export const Register = () => {
                 <Box sx={{ width: 350, padding:'10px 20px' }} >
                     <Grid container spacing={2} marginBottom='23vh' marginLeft='-3vw' >
                         <Grid item xs={12}>
-                            <Typography variant='h1' component="h1">Crear cuenta</Typography>
+                            <Typography color='whitesmoke' variant='h1' className='fontStyle' component="h1">Crear cuenta</Typography>
                             <Chip
                                 label="No reconocemos ese usuario / contraseña"
                                 color="error"
