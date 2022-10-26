@@ -79,7 +79,7 @@ export const Navbar = () => {
                     isSearchVisible
                         ? (
                             <Input
-                                sx={{ display: { xs: 'none', sm: 'flex' } }}
+                                sx={{ display: { xs: 'none', sm: 'flex' },paddingTop:{xs:3,sm:2} }}
                                 className='fadeIn'
                                 autoFocus
                                 value={ searchTerm }
@@ -103,7 +103,7 @@ export const Navbar = () => {
                         <IconButton
                             onClick={ () => setIsSearchVisible(true) }
                             className="fadeIn"
-                            sx={{ display: { xs: 'none', sm: 'flex' } }}
+                            sx={{ display: { xs: 'none', sm: 'flex' } ,paddingTop:{xs:3,sm:2}}}
                         >
                             <SearchOutlined />
                         </IconButton>
@@ -113,7 +113,7 @@ export const Navbar = () => {
 
                 {/* Pantallas pequeñas */}
                 <IconButton
-                    sx={{ display: { xs: 'flex', sm: 'none' } }}
+                    sx={{ display: { xs: 'flex', sm: 'none' },paddingTop:{xs:3,sm:2} }}
                     onClick={ toggleSideMenu }
                 >
                     <SearchOutlined />
@@ -121,7 +121,7 @@ export const Navbar = () => {
 
                 <NextLink href="/cart" passHref>
                     <Link>
-                        <IconButton>
+                        <IconButton sx={{paddingTop:{xs:3,sm:2}}}>
                             <Badge badgeContent={ numberOfItems > 9 ? '+9': numberOfItems  } color="secondary">
                                 <ShoppingCartOutlined />
                             </Badge>
@@ -130,7 +130,7 @@ export const Navbar = () => {
                 </NextLink>
 
 
-                <Button onClick={ toggleSideMenu }>
+                <Button sx={{paddingTop:2}}onClick={ toggleSideMenu }>
                     <MenuIcon/>
                 </Button>
 

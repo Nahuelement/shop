@@ -71,8 +71,8 @@ const ProductPage:NextPage<Props> = ({ product }) => {
           />
         </Grid>
 
-        <Grid item xs={ 12 } sm={ 6}>
-          <Box display='flex' flexDirection='column' >
+        <Grid item xs={ 12 } sm={ 6} sx={{paddingTop:{xs:'-7vh',sm:'none'}}}>
+          <Box display='flex'  flexDirection='column' paddingLeft={{xs:3,sm:0}}>
 
             {/* titulos */}
             <Typography variant='h1' component='h1'>{ product.title }</Typography>
@@ -95,7 +95,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
               />
             </Box>
 
-            <Box justifyContent='center' alignContent='center'>
+            <Box justifyContent='center'  alignContent='center'>
             {/* Agregar al carrito */}
             {
               (product.inStock > 0)
@@ -120,7 +120,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
 
 
             {/* Descripción */}
-            <Box sx={{ mt:3 }}>
+            <Box sx={{ mt:3 ,paddingBottom:{xs:5,sm:0}}}>
               <Typography variant='subtitle2'>Descripción</Typography>
               <Typography variant='body2'>{ product.description }</Typography>
             </Box>
