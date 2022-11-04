@@ -8,6 +8,7 @@ import { Link, Box, Button, Card, CardContent, Divider, Grid, Typography, Chip }
 import { CartContext } from '../../context';
 import { ShopLayout } from '../../components/layouts/ShopLayout';
 import { CartList, OrderSummary } from '../../components/cart';
+import { FullScreenLoading } from '../../components/ui';
 // import { countries } from '../../utils';
 
 
@@ -64,7 +65,7 @@ const SummaryPage = () => {
                 {
                     display:{xs:'none',sm:'flex'}
                 }
-            }
+            }paddingBottom='4vh'
              display='flex' flexDirection='column'>
                 <Card className='summary-card'>
                     <CardContent
@@ -154,7 +155,7 @@ const SummaryPage = () => {
                 {
                     display:{xs:'flex',sm:'none'},
                     justifyContent:'center',
-                    marginBottom:'4vh'
+                    paddingBottom:'5vh'
                 }
             }>
                 <Card className='summary-card'>
@@ -218,6 +219,7 @@ const SummaryPage = () => {
         </Grid>
 
         }
+        {!viewResume && <FullScreenLoading/>}
     </ShopLayout>
   )
 }

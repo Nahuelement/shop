@@ -206,7 +206,7 @@ interface SeedData {
             type: 'Polera',
             tags: ['Polera'],
             title: "adidas originals%Polera REGULAR TSHIRT%adidas originals",
-            gender: 'men'
+            gender: 'women'
         },
         {
             description:' Inspirada en el anime y en Nike Air, esta polera de corte cuadrado está confeccionada con nuestro tejido de algodón de uso diario, y con un ajuste amplio para brindar una sensación cómoda e informal que se ve tan bien como se siente.',
@@ -332,7 +332,7 @@ description:'Pantalon BuzoTela Fleece ultra suave y de algodón. Interior cepill
     description:'Jeans de mezclilla, Cierre YKK, Bolsillo para monedas, detalles reflectivos en el interior de la basta' ,
           images: [
                 'lippi-6876-6659401-1-product.webp',
-                'lippi-6876-6659401-1-product.webpg',
+                'lippi-6876-6659401-1-product.webp',
             ],
             inStock: 12,
             price: 36990,

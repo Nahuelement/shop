@@ -3,14 +3,14 @@ import React from 'react'
 
 export const FullScreenLoading = () => {
   return (
-    <Box 
-        display='flex' 
+    <Box
+        display='flex'
         flexDirection='column'
-        justifyContent='center' 
-        alignItems='center' 
+        justifyContent='center'
+        alignItems='center'
         height='calc(100vh - 200px)'
     >
-        <Typography sx={{ mb: 3 }} variant="h2" fontWeight={ 200 } fontSize={ 20 }>Cargando...</Typography>
+        <Typography sx={{ mb: 3 }} variant="h2" fontWeight={ 300 } fontSize={ 40 }>Cargando Pago...</Typography>
         <CircularProgress thickness={ 2 } />
     </Box>
   )
