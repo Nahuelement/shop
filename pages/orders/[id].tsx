@@ -75,14 +75,16 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 
         <Grid container     sx={{
                 display:'flex',
-                justifyContent:'center'
+                justifyContent:'center',
+                paddingTop:'15vh'
             }} className='fadeIn'>
             <Grid item
             sx={{
                 display:'flex',
-                justifyContent:'center'
+                justifyContent:'center',
+                flexDirection:'column'
             }}
-            xs={ 12 } sm={ 7 }>
+            xs={ 10 } sm={ 7} p={{xs:1,sm:3}}>
                 <CartList products={  order.orderItems } />
             </Grid>
             <Grid item
@@ -90,7 +92,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
                 display:'flex',
                 justifyContent:'center'
             }}
-            xs={ 12 } sm={ 5 }
+            xs={ 10 } sm={ 5 } p={{xs:1,sm:3}}
             >
                 <Card className='summary-card'>
                     <CardContent>

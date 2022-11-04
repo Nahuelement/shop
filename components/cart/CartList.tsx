@@ -22,6 +22,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
     }
 
     const productsToShow = products ? products : cart;
+    // //products ? products : cart;
 
 
     return (

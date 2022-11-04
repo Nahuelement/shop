@@ -53,11 +53,11 @@ const SummaryPage = () => {
     <ShopLayout title='Resumen de orden' pageDescription={'Resumen de la orden'}>
         <Typography variant='h1'sx={{marginBottom:2}} component='h1'>Resumen de la orden</Typography>
 
-        <Grid container>
-            <Grid item xs={ 12 } >
+        <Grid container display='flex' justifyContent='center' alignContent='center'>
+            <Grid item xs={ 10 } >
                 <CartList />
             </Grid>
-            <Grid item xs={ 12 }
+            <Grid item xs={ 10 }
              sx={
                 {
                     display:{xs:'none',sm:'flex'}
