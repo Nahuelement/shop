@@ -23,7 +23,6 @@ export const SubBar = () => {
     <Box sx={{ display:'flex',width:'50vw' }}
         justifyContent='space-around'
 
-        pb={4}
 
         className="  fadeIn">
         <NextLink href='/category/men' passHref>
