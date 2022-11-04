@@ -79,7 +79,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                         <Grid item xs={2} sm={5}
                             sx={{display:'flex', justifyContent:'flex-end'}} display='flex'  alignItems='center' flexDirection='row'>
                             <Box pt={9} display='flex' flexDirection='column' justifyContent='flex-start'>
-                            <Typography variant='subtitle1'>{ `$${ product.price }` }</Typography>
+                            <Typography variant='subtitle1'>{ `$ ${product.price}`.split('').slice(0,-3)}.{`${product.price}`.split('').slice(-3)}</Typography>
 
                             {
                                 editable && (

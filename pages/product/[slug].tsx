@@ -77,7 +77,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
             {/* titulos */}
             <Typography variant='h1' color='primary' pb={1} component='h1'>{ `${product.title.split('%').slice(0,1)}` }</Typography>
             <Typography variant='h1' component='h1'>{ `${product.title.split('%').slice(1,-1)}`.replaceAll(",", " ") }</Typography>
-            <Typography variant='subtitle1' component='h2'>{ `$${product.price}` }</Typography>
+            <Typography variant='subtitle1' component='h2'>{ `$ ${product.price}`.split('').slice(0,-3)}.{`${product.price}`.split('').slice(-3)}</Typography>
 
             {/* Cantidad */}
             <Box sx={{ my: 2 }}>
