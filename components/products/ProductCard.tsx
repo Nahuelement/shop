@@ -36,7 +36,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
             onMouseLeave={ () => setIsHovered(false) }
       >
           <Card
-            sx={{ maxWidth: 305 }}
+            sx={{ maxWidth: 270 ,maxHeight:500,diplay:'flex',alignContent:'center'}}
           >
 
 
@@ -63,7 +63,8 @@ export const ProductCard: FC<Props> = ({ product }) => {
                             alt={ product.title }
                             sx={{
                               borderRadius:2,
-                              padding:{xs:0,sm:1}
+                              padding:{xs:0,sm:1},
+                              maxWidth: 285
                             }}
                             onLoad={ () => setIsImageLoaded(true) }
                         />
@@ -74,13 +75,14 @@ export const ProductCard: FC<Props> = ({ product }) => {
 
 
 
+
           </Link>
               </NextLink>
-          <CardActions sx={{ mt: 1, display: 'flex',flexDirection:'column',justifyContent:'space-evenly',alignItems:'flex-start'}} className='fadeIn'
+          <CardActions sx={{ mt: '1vh', display: 'flex',flexDirection:'column',justifyContent:'space-evenly',alignItems:'flex-start'}} className='fadeIn'
                 >
 
-              <Typography color='primary'  pb={1} pl={2} fontWeight={700}>{ product.title }</Typography>
-              <Typography color='gray' fontWeight={500} pl={1}>{ ` ${product.description}`.substring(0,21) }</Typography>
+              <Typography color='primary'  pb={0} pl={2} fontWeight={900}>{ product.title.split('%').slice(0,1) }</Typography>
+              <Typography color='gray' sx={{whiteSpace: 'nowrap',width: '200px',overflow: 'hidden',textOverflow:'ellipsis'}} fontWeight={500}  pb={1} pl={1}>{ `${product.title.split('%').slice(1,-1)}`.replaceAll(",", " ")}</Typography>
               <Typography color='black' fontWeight={600} pl={1}>{ `$ ${product.price}` }</Typography>
           </CardActions>
 

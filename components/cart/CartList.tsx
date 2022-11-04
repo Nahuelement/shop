@@ -56,7 +56,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                             sx={{display:'flex', justifyContent:'center', marginTop:{xs:'-12vh',sm:'0vh'}}}
                         >
                             <Box display='flex' flexDirection='column' pt={9}>
-                                <Typography variant='body1'>{ product.title }</Typography>
+                                <Typography variant='body1'>{ `${product.title.split(' ').slice(0,-1)}`.replaceAll(",", " ") }</Typography>
                                 <Typography variant='body1'>Talla: <strong>{ product.size }</strong></Typography>
                                     <br/>
 

@@ -20,7 +20,7 @@ const productSchema = new Schema({
     type: {
         type: String,
         enum: {
-            values: ['shirts','pants','hoodies','hats'],
+            values: ['shirts','pants','hoodies','hats','Polar','Chaqueta','Polera','Poleron','Pantalon'],
             message: '{VALUE} no es un tipo válido'
         },
         default: 'shirts'
