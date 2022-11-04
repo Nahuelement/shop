@@ -62,7 +62,7 @@ const SummaryPage = () => {
                 {
                     display:{xs:'none',sm:'flex'}
                 }
-            }
+            } marginBottom='3vh'
              display='flex' flexDirection='column'>
                 <Card className='summary-card'>
                     <CardContent
@@ -151,7 +151,8 @@ const SummaryPage = () => {
             <Grid item xs={ 12 } sx={
                 {
                     display:{xs:'flex',sm:'none'},
-                    justifyContent:'center'
+                    justifyContent:'center',
+                    marginBottom:'3vh'
                 }
             }>
                 <Card className='summary-card'>

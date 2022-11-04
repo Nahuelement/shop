@@ -22,7 +22,7 @@ export const OrderSummary: FC<Props> = ({ orderValues }) => {
 
 
   return (
-    <Grid container sx={{marginTop:'3vh'}}>
+    <Grid container sx={{marginTop:'7vh'}}>
 
         <Grid item xs={6}>
             <Typography>No. Productos</Typography>

@@ -167,8 +167,8 @@ export const CartProvider:FC = ({ children }) => {
         try {
 
             const { data } = await tesloApi.post<IOrder>('/orders', body);
+            setTimeout(dispatch({ type: '[Cart] - Order complete' })!,9000);
 
-            dispatch({ type: '[Cart] - Order complete' });
 
             return {
                 hasError: false,
