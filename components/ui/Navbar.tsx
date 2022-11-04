@@ -29,7 +29,7 @@ export const Navbar = () => {
             <Toolbar>
                 <NextLink href='/' passHref>
                     <Link display='flex' alignItems='center'>
-                        <Typography pl={3} variant='h1'>Shopping </Typography>
+                        <Typography pl={2} variant='h1'>Shopping </Typography>
 
                     </Link>
                 </NextLink>
