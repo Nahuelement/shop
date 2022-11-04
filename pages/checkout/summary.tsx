@@ -18,6 +18,7 @@ const SummaryPage = () => {
 
     const [isPosting, setIsPosting] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [viewResume, setViewResume] = useState(true)
 
     useEffect(() => {
         if ( !Cookies.get('firstName') ) {
@@ -28,6 +29,7 @@ const SummaryPage = () => {
 
     const onCreateOrder = async() => {
         setIsPosting(true);
+        setViewResume(false)
 
         const { hasError, message } = await createOrder();
 
@@ -53,7 +55,7 @@ const SummaryPage = () => {
     <ShopLayout title='Resumen de orden' pageDescription={'Resumen de la orden'}>
         <Typography variant='h1'sx={{marginBottom:2}} component='h1'>Resumen de la orden</Typography>
 
-        <Grid container display='flex' justifyContent='center' alignContent='center'>
+       { viewResume &&   <Grid container display='flex' justifyContent='center' alignContent='center'>
             <Grid item xs={ 10 } >
                 <CartList />
             </Grid>
@@ -62,7 +64,7 @@ const SummaryPage = () => {
                 {
                     display:{xs:'none',sm:'flex'}
                 }
-            } 
+            }
              display='flex' flexDirection='column'>
                 <Card className='summary-card'>
                     <CardContent
@@ -215,7 +217,7 @@ const SummaryPage = () => {
             </Grid>
         </Grid>
 
-
+        }
     </ShopLayout>
   )
 }
