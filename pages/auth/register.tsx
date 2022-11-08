@@ -26,11 +26,19 @@ const RegisterPage = () => {
         <AuthLayout title={'Registrarse'}>
 
 
-<Grid container className='backgroundAnimated'>
+<Grid container sx={{
+         display:'flex',
+         justifyContent:'center',
+         alignItems:'center',
+         alignContent:'center'
+
+    }}
+    className='backgroundAnimated'>
 <Grid item xs={12}  sx={{
          display:'flex',
          justifyContent:'center',
-         alignItems:'center'
+         alignItems:'center',
+         alignContent:'center'
 
     }}
     paddingTop='29vh' >

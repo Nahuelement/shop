@@ -45,7 +45,13 @@ export const Register = () => {
   return (
     <form onSubmit={ handleSubmit(onRegisterForm) } noValidate>
                 <Box sx={{ width: 350, padding:'10px 20px' }} >
-                    <Grid container spacing={2} marginBottom='23vh' >
+                    <Grid container spacing={2} marginBottom='23vh' sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }}  >
                         <Grid item xs={10}>
                             <Typography color='whitesmoke' variant='h1' className='fontStyle' component="h1">Crear cuenta</Typography>
                             <Chip

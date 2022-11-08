@@ -55,8 +55,18 @@ export const Login = () => {
   return (
     <>
         <form onSubmit={ handleSubmit(onLoginUser) } noValidate>
-                <Box sx={{ width: 350, padding:'10px 20px' }} marginTop='5vh'>
-                    <Grid container spacing={2} marginBottom='29vh' >
+                <Box sx={{ width: 350, padding:'10px 20px', display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center' }}
+                        marginTop='5vh'>
+                    <Grid container spacing={2} sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }} marginBottom='29vh' >
                         <Grid item xs={10}>
                             <Typography color='whitesmoke' variant="h1" className='fontStyle' component="h1">Iniciar Sesión</Typography>
                             <Chip

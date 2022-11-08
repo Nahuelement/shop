@@ -22,9 +22,20 @@ const LoginPage = () => {
 
     return (
         <AuthLayout title={'Ingresar'}>
-    <Grid container className='backgroundAnimated'>
+    <Grid container
+    sx={{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        alignContent:'center'
+
+   }}
+     className='backgroundAnimated'>
     <Grid item xs={12}  sx={{
-         display:'flex'
+         display:'flex',
+         alignItems:'center',
+         alignContent:'center'
+
 
     }}
     justifyContent='center' paddingTop='30vh' >

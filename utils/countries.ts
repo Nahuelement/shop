@@ -1,65 +1,49 @@
 export const countries = [{
-    name:'Arica-Parinacota',
-    code: 'CRI'
+    name:'Arica-Parinacota'
 },
 {
-    name:'Tarapaca',
-    code: 'ARG'
+    name:'Tarapaca'
 },
 {
-    name:'Antofagasta',
-    code: 'VEN'
+    name:'Antofagasta'
 },
 {
-    name:'Atacama',
-    code: 'GTM'
+    name:'Atacama'
 },
 {
-    name:'Coquimbo',
-    code: 'MEX'
+    name:'Coquimbo'
 },
 {
-    name:'Valparaiso',
-    code: 'BLZ'
+    name:'Valparaiso'
 },
 {
-    name:'Metropolitana',
-    code: 'PRI'
+    name:'Metropolitana'
 },
 {
-    name:"O'Higgins",
-    code: 'ECU'
+    name:"O'Higgins"
 },
 {
-    name:'Maule',
-    code: 'PAN'
+    name:'Maule'
 },
 {
-    name:'Ñuble',
-    code: 'HND'
+    name:'Ñuble'
 },
 {
-    name:'Bio Bio',
-    code: 'BOL'
+    name:'Bio Bio'
 },
 {
-    name:'Araucania',
-    code: 'SLV'
+    name:'Araucania'
 },
 {
-    name:'Los Rios',
-    code: 'PER'
+    name:'Los Rios'
 },
 {
-    name:'Los Lagos',
-    code: 'URY'
+    name:'Los Lagos'
 },
 {
-    name:'Aysen',
-    code: 'COL'
+    name:'Aysen'
 },
 {
-    name:'Magallanes Y Antartica Chilena',
-    code: 'DOM'
+    name:'Magallanes Y Antartica Chilena'
 },
 ];
