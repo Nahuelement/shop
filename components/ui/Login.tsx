@@ -55,7 +55,10 @@ export const Login = () => {
   return (
     <>
         <form onSubmit={ handleSubmit(onLoginUser) } noValidate>
-                <Box sx={{ width: 350, padding:'10px 20px', display:'flex' }}
+                <Box sx={{ width: 350, display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'}}
                         marginTop='5vh'>
                     <Grid container spacing={2} sx={{
                         display:'flex',
@@ -64,7 +67,13 @@ export const Login = () => {
                         alignContent:'center'
 
                          }} marginBottom='29vh' >
-                        <Grid item xs={10}>
+                        <Grid item  sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }}xs={10}>
                             <Typography color='whitesmoke' variant="h1" className='fontStyle' component="h1">Iniciar Sesión</Typography>
                             <Chip
 
@@ -76,7 +85,13 @@ export const Login = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={10}>
+                        <Grid item sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }}xs={10}>
                             <TextField
                                 type="email"
                                 label="Correo"
@@ -98,7 +113,13 @@ export const Login = () => {
                             />
 
                         </Grid>
-                        <Grid item xs={10}>
+                        <Grid item sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }} xs={10}>
                             <TextField
                                 label="Contraseña"
                                 type='password'
@@ -118,7 +139,13 @@ export const Login = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={10} display='flex' justifyContent='center'>
+                        <Grid item sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }} xs={10} display='flex' justifyContent='center'>
                             <Button
                                 type="submit"
                                 color="secondary"
@@ -134,7 +161,13 @@ export const Login = () => {
                             </Button>
                         </Grid>
 
-                        <Grid item xs={10} display='flex' justifyContent='center'>
+                        <Grid item  sx={{
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        alignContent:'center'
+
+                         }} xs={10} display='flex' justifyContent='center'>
                             <NextLink
                                 href={ router.query.p ? `/auth/register?p=${ router.query.p }`: '/auth/register' }
                                 passHref>
