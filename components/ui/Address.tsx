@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import  {useRouter}  from 'next/router';
-import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
+import { Autocomplete, Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
 import Cookies from 'js-cookie';
 import { useForm } from "react-hook-form";
 
@@ -133,7 +133,7 @@ export const Address = () => {
                     />
                 </Grid>
 
-                <Grid item xs={12} sm={ 6 }>
+                {/* <Grid item xs={12} sm={ 6 }>
                     <TextField
                         label='Código Postal'
                         variant="filled"
@@ -145,9 +145,9 @@ export const Address = () => {
                         error={ !!errors.zip }
                         helperText={ errors.zip?.message }
                         />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12} sm={ 6 }>
-                    <TextField
+                    {/* <TextField
                         label='Ciudad'
                         variant="filled"
                         fullWidth
@@ -157,11 +157,8 @@ export const Address = () => {
                         })}
                         error={ !!errors.city }
                         helperText={ errors.city?.message }
-                        />
-                </Grid>
-
-                <Grid item xs={12} sm={ 6 }>
-                    {/* <FormControl fullWidth> */}
+                        /> */}
+{/*
                         <TextField
                             // select
                             variant="filled"
@@ -174,18 +171,49 @@ export const Address = () => {
                             })}
                             error={ !!errors.country }
                             helperText={ errors.country?.message }
-                        />
-                            {/* {
-                                countries.map( country => (
+                        >
+                {countries.map( country => (
                                     <MenuItem
                                         key={ country.code }
                                         value={ country.code }
                                     >{ country.name }</MenuItem>
                                 ))
                             }
-                        </TextField> */}
-                    {/* </FormControl> */}
+                </TextField> */}
+                 <Autocomplete
+                    id="country-select-demo"
+                    // sx={{ width: 300 }}
+                    sx={{background:'whitesmoke'}}
+                    options={countries}
+
+                    autoHighlight
+                    getOptionLabel={(option) => option.name}
+                    renderOption={(props, option) => (
+                        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+
+                        {option.name}
+                        </Box>
+                        )}
+                        renderInput={(params) => (
+                            <TextField
+                            { ...register('city', {
+                                required: 'Este campo es requerido'
+                            })}
+                            error={ !!errors.city }
+                            helperText={ errors.city?.message }
+                            {...params}
+                            label="Ciudad"
+                            inputProps={{
+                                ...params.inputProps,
+                                autoComplete: 'new-password', // disable autocomplete and autofill
+                            }}
+                            />
+                        )}
+                        />
                 </Grid>
+
+
+
                 <Grid item xs={12} sm={ 6 }>
                     <TextField
                         label='Teléfono'

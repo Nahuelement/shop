@@ -72,7 +72,7 @@ const AddressPage = () => {
     <ShopLayout title="Dirección" pageDescription="Confirmar dirección del destino">
         <Grid  container xs={12} display='flex' justifyContent='start' alignItems='center'
         sx={{
-          height: '100%',
+          height:{ xs:'100%',sm:'100vh'}
         }}
         className='backgroundAnimated'
         >

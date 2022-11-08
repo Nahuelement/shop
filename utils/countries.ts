@@ -1,84 +1,65 @@
 export const countries = [{
-    name:'Costa Rica',
+    name:'Arica-Parinacota',
     code: 'CRI'
 },
 {
-    name:'Argentina',
+    name:'Tarapaca',
     code: 'ARG'
 },
 {
-    name:'Venezuela',
+    name:'Antofagasta',
     code: 'VEN'
 },
 {
-    name:'Guatemala',
+    name:'Atacama',
     code: 'GTM'
 },
 {
-    name:'Mexico',
+    name:'Coquimbo',
     code: 'MEX'
 },
 {
-    name:'Belice',
+    name:'Valparaiso',
     code: 'BLZ'
 },
 {
-    name:'Puerto Rico',
+    name:'Metropolitana',
     code: 'PRI'
 },
 {
-    name:'Ecuador',
+    name:"O'Higgins",
     code: 'ECU'
 },
 {
-    name:'Panamá',
+    name:'Maule',
     code: 'PAN'
 },
 {
-    name:'Honduras',
+    name:'Ñuble',
     code: 'HND'
 },
 {
-    name:'Bolivia',
+    name:'Bio Bio',
     code: 'BOL'
 },
 {
-    name:'El Salvador',
+    name:'Araucania',
     code: 'SLV'
 },
 {
-    name:'Peru',
+    name:'Los Rios',
     code: 'PER'
 },
 {
-    name:'Uruguay',
+    name:'Los Lagos',
     code: 'URY'
 },
 {
-    name:'Colombia',
+    name:'Aysen',
     code: 'COL'
 },
 {
-    name:'Republica Dominicana',
+    name:'Magallanes Y Antartica Chilena',
     code: 'DOM'
 },
-{
-    name:'España',
-    code: 'ESP'
-},
-{
-    name:'Paraguay',
-    code: 'PRY'
-},
-{
-    name:'Chile',
-    code: 'CHL'
-},
-{
-    name:'Cuba',
-    code: 'CUB'
-},
-{
-    name:'Nicaragua',
-    code: 'NIC'
-}];
+];

@@ -56,9 +56,9 @@ export const CartProvider:FC = ({ children }) => {
                 lastName  : Cookie.get('lastName') || '',
                 address   : Cookie.get('address') || '',
                 address2  : Cookie.get('address2') || '',
-                zip       : Cookie.get('zip') || '',
+                
                 city      : Cookie.get('city') || '',
-                country   : Cookie.get('country') || '',
+
                 phone     : Cookie.get('phone') || '',
             }
 
@@ -134,9 +134,9 @@ export const CartProvider:FC = ({ children }) => {
         Cookie.set('lastName',address.lastName);
         Cookie.set('address',address.address);
         Cookie.set('address2',address.address2 || '');
-        Cookie.set('zip',address.zip);
+
         Cookie.set('city',address.city);
-        Cookie.set('country',address.country);
+
         Cookie.set('phone',address.phone);
 
         dispatch({ type: '[Cart] - Update Address', payload: address });

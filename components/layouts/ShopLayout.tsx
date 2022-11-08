@@ -39,9 +39,10 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
 
         <nav>
             <Navbar />
+            <SideMenu />
         </nav>
 
-        <SideMenu />
+
 
         {
                 (asPath==='/')?
@@ -57,7 +58,7 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
             }
 
         <main style={{
-            
+
             maxWidth: '1440px',
 
         }}>

@@ -45,8 +45,8 @@ export const Register = () => {
   return (
     <form onSubmit={ handleSubmit(onRegisterForm) } noValidate>
                 <Box sx={{ width: 350, padding:'10px 20px' }} >
-                    <Grid container spacing={2} marginBottom='23vh' marginLeft='-3vw' >
-                        <Grid item xs={12}>
+                    <Grid container spacing={2} marginBottom='23vh' >
+                        <Grid item xs={10}>
                             <Typography color='whitesmoke' variant='h1' className='fontStyle' component="h1">Crear cuenta</Typography>
                             <Chip
                                 label="No reconocemos ese usuario / contraseña"
@@ -57,7 +57,7 @@ export const Register = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid item xs={10}>
                             <TextField
                                 label="Nombre completo"
                                 variant="filled"
@@ -75,7 +75,7 @@ export const Register = () => {
                                 helperText={ errors.name?.message }
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={10}>
                             <TextField
                                 type="email"
                                 label="Correo"
@@ -95,7 +95,7 @@ export const Register = () => {
                                 helperText={ errors.email?.message }
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={10}>
                             <TextField
                                 label="Contraseña"
                                 type='password'
@@ -117,7 +117,7 @@ export const Register = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} display='flex' justifyContent='center'>
+                        <Grid item xs={10} display='flex' justifyContent='center'>
                             <Button
                                 type="submit"
                                 color="secondary"
@@ -132,7 +132,7 @@ export const Register = () => {
                             </Button>
                         </Grid>
 
-                        <Grid item xs={12} display='flex' justifyContent='center'>
+                        <Grid item xs={10} display='flex' justifyContent='center'>
                             <NextLink
                                 href={ router.query.p ? `/auth/login?p=${ router.query.p }`: '/auth/login' }
                                 passHref

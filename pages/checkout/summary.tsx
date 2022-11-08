@@ -50,7 +50,7 @@ const SummaryPage = () => {
         return <></>;
     }
 
-    const { firstName, lastName, address, address2 = '', city, country, phone, zip } = shippingAddress;
+    const { firstName, lastName, address, address2 = '', city, phone } = shippingAddress;
 
   return (
     <ShopLayout title='Resumen de orden' pageDescription={'Resumen de la orden'}>
@@ -97,11 +97,11 @@ const SummaryPage = () => {
                         <Typography>{ address }{ address2 ? `, ${address2}` : ''  } </Typography>
                         </Grid>
                         <Grid item xs={12}>
-                        <Typography>{ city }, { zip }</Typography>
+                        <Typography>{ city }</Typography>
                         </Grid>
                         <Grid item xs={12}>
                         {/* <Typography>{ countries.find( c => c.code === country )?.name }</Typography> */}
-                        <Typography>{ country }</Typography>
+
                         </Grid>
                         <Grid item xs={12}>
                         <Typography>{ phone }</Typography>
@@ -175,9 +175,9 @@ const SummaryPage = () => {
 
                         <Typography>{ firstName } { lastName }</Typography>
                         <Typography>{ address }{ address2 ? `, ${address2}` : ''  } </Typography>
-                        <Typography>{ city }, { zip }</Typography>
+                        <Typography>{ city }</Typography>
                         {/* <Typography>{ countries.find( c => c.code === country )?.name }</Typography> */}
-                        <Typography>{ country }</Typography>
+                       
                         <Typography>{ phone }</Typography>
 
                         <Divider sx={{ my:1 }} />

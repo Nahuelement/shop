@@ -37,7 +37,7 @@ const HomePage: NextPage<Props> = ({products}) => {
           isLoading
             ? <FullScreenLoading /> */}
         <Box sx={{
-          paddingTop:{xs:10,sm:5}
+          paddingTop:{xs:2,sm:4}
         }}>
             <ProductList products={ products } />
         </Box>

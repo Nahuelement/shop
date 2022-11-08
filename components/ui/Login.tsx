@@ -56,8 +56,8 @@ export const Login = () => {
     <>
         <form onSubmit={ handleSubmit(onLoginUser) } noValidate>
                 <Box sx={{ width: 350, padding:'10px 20px' }} marginTop='5vh'>
-                    <Grid container spacing={2} marginBottom='29vh' marginLeft='-3vw'>
-                        <Grid item xs={12}>
+                    <Grid container spacing={2} marginBottom='29vh' >
+                        <Grid item xs={10}>
                             <Typography color='whitesmoke' variant="h1" className='fontStyle' component="h1">Iniciar Sesión</Typography>
                             <Chip
 
@@ -69,7 +69,7 @@ export const Login = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid item xs={10}>
                             <TextField
                                 type="email"
                                 label="Correo"
@@ -91,7 +91,7 @@ export const Login = () => {
                             />
 
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={10}>
                             <TextField
                                 label="Contraseña"
                                 type='password'
@@ -111,7 +111,7 @@ export const Login = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} display='flex' justifyContent='center'>
+                        <Grid item xs={10} display='flex' justifyContent='center'>
                             <Button
                                 type="submit"
                                 color="secondary"
@@ -127,7 +127,7 @@ export const Login = () => {
                             </Button>
                         </Grid>
 
-                        <Grid item xs={12} display='flex' justifyContent='center'>
+                        <Grid item xs={10} display='flex' justifyContent='center'>
                             <NextLink
                                 href={ router.query.p ? `/auth/register?p=${ router.query.p }`: '/auth/register' }
                                 passHref>
@@ -139,7 +139,7 @@ export const Login = () => {
                         </Grid>
 
 {/*
-                        <Grid item xs={12} display='flex' flexDirection='column' justifyContent='end'>
+                        <Grid item xs={10} display='flex' flexDirection='column' justifyContent='end'>
                             <Divider sx={{ width: '100%', mb: 2 }} />
                             {
                                 Object.values( providers ).map(( provider: any ) => {

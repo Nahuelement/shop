@@ -12,7 +12,7 @@ export const SubBar = () => {
 
 <Grid item  display='flex' justifyContent='center' xs ={12}
     sx={{
- marginTop:{xs:'-36vh',sm:'4vh',lg:'5vh'},
+ marginTop:{xs:'2vh',sm:'4vh',lg:'5vh'},
     height:'1vh',
 
     }}

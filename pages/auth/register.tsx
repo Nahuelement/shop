@@ -28,10 +28,12 @@ const RegisterPage = () => {
 
 <Grid container className='backgroundAnimated'>
 <Grid item xs={12}  sx={{
-         display:'flex'
+         display:'flex',
+         justifyContent:'center',
+         alignItems:'center'
 
     }}
-    justifyContent='center' paddingTop='29vh' >
+    paddingTop='29vh' >
     <Register/>
     </Grid>
     {/* <Grid item xs={12}  lg={5} display='flex' justifyContent='start' pt='15vh'
