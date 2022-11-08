@@ -55,10 +55,7 @@ export const Login = () => {
   return (
     <>
         <form onSubmit={ handleSubmit(onLoginUser) } noValidate>
-                <Box sx={{ width: 350, padding:'10px 20px', display:'flex',
-                        justifyContent:'center',
-                        alignItems:'center',
-                        alignContent:'center' }}
+                <Box sx={{ width: 350, padding:'10px 20px', display:'flex' }}
                         marginTop='5vh'>
                     <Grid container spacing={2} sx={{
                         display:'flex',

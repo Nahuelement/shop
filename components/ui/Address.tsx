@@ -50,7 +50,7 @@ export const Address = () => {
             address2: '',
             zip: '',
             city: '',
-            country: countries[0].code,
+            country: countries[0].name,
             phone: '',
        }
     });
