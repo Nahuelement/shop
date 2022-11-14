@@ -12,17 +12,17 @@ import { Box } from "@mui/material";
 export const SpotCarousel = () => {
   return (
 
-    <Box className="slider-container"  sx={{width:'100%',marginTop:{xs:'4vh',lg:'-31vh'},position:'relative'}}>
+    <Box className="slider-container"  sx={{width:{xs:'100%',sm:'90%'},marginTop:{xs:'4vh',lg:'-35vh'},position:'relative'}}>
     <Carousel
     className={ styles['each-slide'] }
      autoPlay
      infiniteLoop
-     interval={6500}
+     interval={4500}
      emulateTouch={false}
      showArrows={false}
      showIndicators={false}
      stopOnHover={false}
-     transitionTime={1500}
+     transitionTime={1700}
      showThumbs={false}
      dynamicHeight={false}
      swipeable={false}
