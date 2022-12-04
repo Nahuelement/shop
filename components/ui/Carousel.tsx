@@ -12,7 +12,7 @@ import { Box } from "@mui/material";
 export const SpotCarousel = () => {
   return (
 
-    <Box className="slider-container"  sx={{width:{xs:'100%'},height:{xs:'100%',sm:'90%'},marginTop:{xs:'4vh',lg:'-35vh'},position:'relative'}}>
+    <Box className="slider-container"  sx={{width:{xs:'100%'},height:{xs:'100%',sm:'80%'},marginTop:{xs:'4vh',lg:'-35vh'},position:'relative'}}>
     <Carousel
     className={ styles['each-slide'] }
      autoPlay
@@ -36,17 +36,17 @@ export const SpotCarousel = () => {
                 >
                     <img
                     style={{borderRadius:'2px'}}
-                    src="https://res.cloudinary.com/nahuelement/image/upload/c_limit,w_1283/v1666044100/mkvnt897z9dhozm9boab.jpg"  />
+                    src="https://res.cloudinary.com/nahuelement/image/upload/c_scale,w_1503/v1666037243/z3afzadksml5irxxmrgc.jpg"  />
                     {/* <p className="legend">Legend 1</p> */}
                 </div>
                 <div >
-                    <img src="https://res.cloudinary.com/nahuelement/image/upload/v1666037240/hfk3fcbafssw8eaopj40.jpg" />
+                    <img src="https://res.cloudinary.com/nahuelement/image/upload/c_scale,w_1503/v1666037240/hfk3fcbafssw8eaopj40.jpg" />
                     {/* <p className="legend">Legend 2</p> */}
                 </div>
-                <div >
+                {/* <div >
                     <img src="https://res.cloudinary.com/nahuelement/image/upload/v1666044240/skkarne1c090u85wehwt.jpg" />
-                    {/* <p className="legend">Legend 3</p> */}
-                </div>
+
+                </div> */}
             </Carousel>
 
 
