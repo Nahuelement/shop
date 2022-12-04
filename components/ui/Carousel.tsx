@@ -36,7 +36,7 @@ export const SpotCarousel = () => {
                 >
                     <img
                     style={{borderRadius:'2px'}}
-                    src="https://res.cloudinary.com/nahuelement/image/upload/v1666037243/z3afzadksml5irxxmrgc.jpg"  />
+                    src="https://res.cloudinary.com/nahuelement/image/upload/c_limit,w_1283/v1666044100/mkvnt897z9dhozm9boab.jpg"  />
                     {/* <p className="legend">Legend 1</p> */}
                 </div>
                 <div >
