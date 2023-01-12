@@ -54,7 +54,7 @@ const KidPage: NextPage<Props> = ({products}) => {
 
 
   return (
-    <ShopLayout title={'Teslo-Shop - Kids'} pageDescription={'Encuentra los mejores productos de Teslo para niños'}>
+    <ShopLayout title={'Shoping - Niños'} pageDescription={'Encuentra los mejores productos de Teslo para niños'}>
 
 
 <Grid container item pt={5} position='relative'

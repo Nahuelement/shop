@@ -54,7 +54,7 @@ const WomenPage: NextPage<Props> = ({products}) => {
 
 
   return (
-    <ShopLayout title={'Teslo-Shop - Women'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
+    <ShopLayout title={'Shoping - Mujer'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
         {/* <Typography variant='h1' component='h1'>Mujeres</Typography> */}
 
       <Grid container item pt={5} position='relative'
