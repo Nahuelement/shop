@@ -98,7 +98,7 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
 .backgroundAnimated2{
 
   margin:0;
-  margin-top:0vh;
+  margin-top:0;
 
   height: 112vh;
 
@@ -166,12 +166,12 @@ background: #f9f8fc;
 
 .ml16 {
   color: #402d2d;
-  padding: 40px !important;
+  padding: 40px 0!important;
   font-weight: 800!important;
   font-family: 'Contane2'!important;
   font-size: 2em!important;
   text-transform: uppercase!important;
-  letter-spacing: 1.05em!important;
+  letter-spacing: .5em!important;
   overflow: hidden!important;
 }
 
