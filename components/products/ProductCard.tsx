@@ -82,7 +82,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                 >
 
               <Typography color='primary'  pb={0} pl={1} fontWeight={900}>{ product.title.split('%').slice(0,1) }</Typography>
-              <Typography color='gray' sx={{whiteSpace: 'nowrap',width:{xs:'140px',sm:'170px'},overflow: 'hidden',textOverflow:'ellipsis'}} fontWeight={500}  pb={1} >{ `${product.title.split('%').slice(1,-1)}`.replaceAll(",", " ")}</Typography>
+              <Typography className='fontStyle' color='gray' sx={{whiteSpace: 'nowrap',width:{xs:'140px',sm:'170px'},overflow: 'hidden',textOverflow:'ellipsis'}} fontWeight={600}  pb={1} >{ `${product.title.split('%').slice(1,-1)}`.replaceAll(",", " ")}</Typography>
               <Typography color='black' fontWeight={600} >{ `$ ${product.price}`.split('').slice(0,-3)}.{`${product.price}`.split('').slice(-3)}</Typography>
           </CardActions>
 

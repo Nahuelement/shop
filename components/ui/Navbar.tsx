@@ -46,6 +46,7 @@ export const Navbar = () => {
         <NextLink href='/category/men' passHref>
             <Link style={{}}>
                 <Button
+                className='fontStyle'
                 style={{fontSize:16,backgroundColor: asPath === '/category/men' ? 'black':'white',color: asPath === '/category/men' ? 'white':'black'}  }
                 > Hombres</Button>
             </Link>
@@ -53,6 +54,7 @@ export const Navbar = () => {
         <NextLink href='/category/women' passHref>
             <Link>
                 <Button
+                className='fontStyle'
                 style={{fontSize:16,backgroundColor: asPath === '/category/women' ? 'black':'white',color: asPath === '/category/women' ? 'white':'black'}  }
 
                 >
@@ -62,6 +64,7 @@ export const Navbar = () => {
         <NextLink href='/category/kid' passHref>
             <Link>
                 <Button
+                className='fontStyle'
                 style={{fontSize:16,backgroundColor: asPath === '/category/kid' ? 'black':'white',color: asPath === '/category/kid' ? 'white':'black'}  }
 
 

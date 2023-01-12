@@ -28,6 +28,7 @@ export const SubBar = () => {
         <NextLink href='/category/men' passHref>
             <Link>
                 <Button
+                className='fontStyle'
                 style={{fontSize:21}}
                    color={ asPath === '/category/men' ? 'primary':'info'}>Hombres</Button>
             </Link>
@@ -35,6 +36,7 @@ export const SubBar = () => {
         <NextLink href='/category/women' passHref>
             <Link>
                 <Button
+                className='fontStyle'
                 style={{fontSize:21}}
                 color={ asPath === '/category/women' ? 'primary':'info'}>Mujeres</Button>
             </Link>
@@ -42,6 +44,7 @@ export const SubBar = () => {
         <NextLink href='/category/kid' passHref>
             <Link>
                 <Button
+                className='fontStyle'
                 style={{fontSize:21}}
                 color={ asPath === '/category/kid' ? 'primary':'info'}>Niños</Button>
             </Link>
