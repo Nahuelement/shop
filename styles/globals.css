@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Contane';
-  src:url(../public/fonts/OTF/Contane\ Text\ Light\ Italic.otf) format("opentype") ;
+  src:url(../public/fonts/OTF/Contane\ Text\ Light\ Italic.otf) ;
 }
 
 @font-face {
@@ -80,7 +80,9 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
 .backgroundAnimated{
 
   margin:0;
-	padding-top:20vh;
+  margin-top: 20vh;
+
+  height: 112vh;
 
 
 	font-family:"arial",heletica,sans-serif;
@@ -125,24 +127,7 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
   border-radius: 10px;
 background: #f9f8fc;
 }
-.ml15 {
-  font-weight: 700;
 
-  padding-top: 5vh;
-  text-transform: uppercase;
-  letter-spacing: 0.1em!important;
-  color:#0093E9;
-  font-family: Permanent Marker, serif!important;
-
-}
-
-.ml15 .word {
-  display: inline-block;
-  font-family: Permanent Marker, serif;
-
-  z-index: 1!important;
-
-}
 .titleAllproduct{
   font-family: Permanent Marker, serif!important;
   color:#0093E9;
@@ -168,7 +153,7 @@ background: #f9f8fc;
   font-family: 'Contane'!important;
   font-size: 2em;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  letter-spacing: 1.01em;
   overflow: hidden;
 }
 

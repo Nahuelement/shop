@@ -71,7 +71,7 @@ const WomenPage: NextPage<Props> = ({products}) => {
 
         className="ml16" variant='h1' sx={{ display:{xs:'none',sm:isLoad?'flex':'none'},
 
-          fontSize:{sm:'3em'}
+          fontSize:{sm:'2.8em'}
 
 
 
