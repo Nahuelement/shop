@@ -59,7 +59,7 @@ const MenPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Shoping - Hombres'} pageDescription={'Encuentra los mejores productospara ellos'}>
 
 
-<Grid container item pt={8} position='relative'
+<Grid container item xs={12} pt={8} position='relative'
           sx={{  flexDirection:'row',
 
           }}

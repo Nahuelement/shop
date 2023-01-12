@@ -57,7 +57,7 @@ const KidPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Shoping - Niños'} pageDescription={'Encuentra los mejores productos de Teslo para niños'}>
 
 
-<Grid container item pt={8} position='relative'
+<Grid container item xs={12} pt={8} position='relative'
           sx={{  flexDirection:'row',
 
           }}
@@ -75,7 +75,7 @@ const KidPage: NextPage<Props> = ({products}) => {
 
 
 
-           }}>Productos&nbsp;para&nbsp;niños</Typography>
+           }}>Productos&nbsp; para &nbsp; niños</Typography>
 
       </Grid >
 
