@@ -70,14 +70,14 @@ const AddressPage = () => {
 
   return (
     <ShopLayout title="Dirección" pageDescription="Confirmar dirección del destino">
-        <Grid  container xs={12} display='flex' justifyContent='start' alignItems='center' flexDirection='row'
+        <Grid  container xs={12} display='flex' justifyContent='start' alignItems='center' flexDirection='row' pt={{xs:'-5vh',md:'0vh'}}
         sx={{
-          height:'100%',
+         
 
         }}
         className='backgroundAnimated2'
         >
-        <Grid item xs={12} sm={8} mt='5vh'>
+        <Grid item xs={12} sm={8} mt={{xs:'13vh',md:'8vh'}}>
        <Address />
        </Grid>
        <Grid item xs={4} justifyContent='center'
