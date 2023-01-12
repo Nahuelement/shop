@@ -123,7 +123,7 @@ background: #f9f8fc;
 .ml15 .word {
   display: inline-block;
   font-family: Permanent Marker, serif;
-  
+
   z-index: 1!important;
 
 }
@@ -136,3 +136,28 @@ background: #f9f8fc;
   letter-spacing: 0.1em!important;
 
 }
+
+
+.textDecoration{
+  text-decoration: underline 4px #2980b9!important;
+  text-underline-offset: 0.4em!important;
+
+
+}
+
+.ml16 {
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+

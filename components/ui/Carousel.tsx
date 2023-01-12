@@ -12,7 +12,7 @@ import { Box } from "@mui/material";
 export const SpotCarousel = () => {
   return (
 
-    <Box className="slider-container"  sx={{width:{xs:'100%'},height:{xs:'100%',sm:'80%'},marginTop:{xs:'4vh',lg:'-35vh'},position:'relative'}}>
+    <Box className="slider-container"  sx={{width:'100%',height:'100%',marginTop:{xs:'4vh',lg:'-36vh'},position:'relative'}}>
     <Carousel
     className={ styles['each-slide'] }
      autoPlay

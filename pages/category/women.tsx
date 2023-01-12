@@ -26,14 +26,28 @@ const WomenPage: NextPage<Props> = ({products}) => {
 
 
   useEffect(() => {
+
+
+    if(typeof document!='undefined'){
+
+      const textWrapper = document.querySelector('.ml16');
+      textWrapper!.innerHTML = textWrapper!.textContent!.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    }
+
+
     anime.timeline({loop: false})
     .add({
-      targets: '.ml15 .word',
-      scale: [14,1],
+      targets: '.ml16 .letter',
+      delay:2500
+    })
+    .add({
+      targets: '.ml16 .letter',
+      translateY: [-100,0],
       opacity: [0,1],
-      easing: "easeOutCirc",
-      duration: 900,
-      delay: (el, i) => 800 * i
+      easing: "easeOutExpo",
+      duration: 2000,
+      delay: (el, i) => 50 * i
     })
     setIsLoad(true)
   }, [])
@@ -43,36 +57,28 @@ const WomenPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Teslo-Shop - Women'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
         {/* <Typography variant='h1' component='h1'>Mujeres</Typography> */}
 
-        <Box pt={5}
-          sx={{ display:{xs:'none',sm:isLoad?'flex':'none'}, flexDirection:'row'
+      <Grid container item pt={5} position='relative'
+          sx={{  flexDirection:'row',
+
           }}
-          className="ml15"
           justifyContent='center'
+
+          alignItems='center'
+
           >
 
         <Typography
 
-        className="word" variant='h1' sx={{
+        className="ml16" variant='h1' sx={{ display:{xs:'none',sm:isLoad?'flex':'none'},
           mb: 0,
           pt:9,
           fontSize:{sm:'2.9em'}
 
 
 
-           }}>Productos &nbsp;</Typography>
+           }}>Productos&nbsp;para&nbsp;ellas</Typography>
 
-
-        <Typography className="word"  variant='h1' sx={{ mb: 0,pt:9,fontSize:{sm:'2.9em'}}}>de moda &nbsp;</Typography>
-
-
-        <Typography className="word" variant='h1' sx={{ mb: 0,pt:9,fontSize:{sm:'2.9em'}}}>para ellas</Typography>
-
-      </Box>
-      <Grid  container  sx={{display:{xs:'flex',sm:'none'}}} pt={10} display='flex' justifyContent='center' >
-        <Grid item  display='block' justifyContent='center' xs={10}>
-        <Typography className='titleAllproduct'  variant='h1' sx={{ mb: 1 }}>Productos para ellas</Typography>
-        </Grid>
-        </Grid>
+      </Grid >
 
 
 

@@ -40,28 +40,32 @@ export const Navbar = () => {
      { (asPath !== '/')?
         <Box sx={{ display:{ xs: 'none', sm: 'flex' ,zIndex:99},width:'30vw' }}
         justifyContent='space-around'
-        pt={1}
+        mt={1}
 
         className="  fadeIn">
         <NextLink href='/category/men' passHref>
-            <Link>
+            <Link style={{}}>
                 <Button
-                style={{fontSize:16}}
-                   color={ asPath === '/category/men' ? 'primary':'info'}>Hombres</Button>
+                style={{fontSize:16,backgroundColor: asPath === '/category/men' ? 'black':'white',color: asPath === '/category/men' ? 'white':'black'}  }
+                > Hombres</Button>
             </Link>
         </NextLink>
         <NextLink href='/category/women' passHref>
             <Link>
                 <Button
-                style={{fontSize:16}}
-                color={ asPath === '/category/women' ? 'primary':'info'}>Mujeres</Button>
+                style={{fontSize:16,backgroundColor: asPath === '/category/women' ? 'black':'white',color: asPath === '/category/women' ? 'white':'black'}  }
+
+                >
+                    Mujeres</Button>
             </Link>
         </NextLink>
         <NextLink href='/category/kid' passHref>
             <Link>
                 <Button
-                style={{fontSize:16}}
-                color={ asPath === '/category/kid' ? 'primary':'info'}>Niños</Button>
+                style={{fontSize:16,backgroundColor: asPath === '/category/kid' ? 'black':'white',color: asPath === '/category/kid' ? 'white':'black'}  }
+
+
+                >Niños</Button>
             </Link>
         </NextLink>
     </Box>

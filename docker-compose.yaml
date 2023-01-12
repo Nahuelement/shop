@@ -1,7 +1,7 @@
 services:
-  shopdb:
+  teslodb:
     image: mongo:4.0.0
-    container_name: shop-database
+    container_name: teslo-database
     ports:
       - 27017:27017
     volumes:

@@ -10,9 +10,9 @@ export const SubBar = () => {
   return (
 
 
-<Grid item  display='flex' justifyContent='center' xs ={12}
+<Grid item  display='flex' justifyContent='center' xs ={12}p={1} pt={2}
     sx={{
- marginTop:{xs:'2vh',sm:'4vh',lg:'5vh'},
+
     height:'1vh',
 
     }}
@@ -20,7 +20,7 @@ export const SubBar = () => {
 >
 
 
-    <Box sx={{ display:'flex',width:'50vw' }}
+    <Box sx={{ display:'flex',width:'40vw' }}
         justifyContent='space-around'
 
 
