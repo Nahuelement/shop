@@ -1,4 +1,15 @@
 
+
+
+@font-face {
+  font-family: 'Contane';
+  src:url(../public/fonts/OTF/Contane\ Text\ Light\ Italic.otf) format('woff2');
+}
+
+
+
+
+
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
@@ -28,7 +39,7 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
 }
 
 .fontStyle{
-  font-family: 'Chelsea Market', cursive !important;
+  font-family: 'Contane', cursive !important;
 }
 
 .fadeIn {
@@ -149,6 +160,7 @@ background: #f9f8fc;
   color: #402d2d;
   padding: 40px 0;
   font-weight: 800;
+  font-family: Contane;
   font-size: 2em;
   text-transform: uppercase;
   letter-spacing: 0.5em;
