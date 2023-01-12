@@ -70,7 +70,7 @@ const AddressPage = () => {
 
   return (
     <ShopLayout title="Dirección" pageDescription="Confirmar dirección del destino">
-        <Grid  container xs={12} display='flex' justifyContent='center' alignItems='center' flexDirection='column'
+        <Grid  container xs={12} display='flex' justifyContent='start' alignItems='center' flexDirection='row'
         sx={{
           height:'100%',
 
