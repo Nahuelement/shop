@@ -148,18 +148,18 @@ background: #f9f8fc;
 
 .ml16 {
   color: #402d2d;
-  padding: 40px 0;
-  font-weight: 800;
-  font-family: 'Contane'!important;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 1.01em;
-  overflow: hidden;
+  padding: 40px 0!important;
+  font-weight: 800!important;
+  font-family: 'Contane2'!important;
+  font-size: 2em!important;
+  text-transform: uppercase!important;
+  letter-spacing: 1.05em!important;
+  overflow: hidden!important;
 }
 
 .ml16 .letter {
-  display: inline-block;
-  line-height: 1em;
+  display: inline-block!important;
+  line-height: 1em!important;
 }
 
 
