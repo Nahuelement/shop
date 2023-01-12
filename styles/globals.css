@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Contane';
-  src:url(../public/fonts/OTF/Contane\ Text\ Light\ Italic.otf) ;
+  src:url(../public/fonts/OTF/Contane\ Text\ Light\ Italic.otf) format("opentype") ;
 }
 
 @font-face {
@@ -43,7 +43,8 @@ background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, F
 }
 
 .fontStyle{
-  font-family: 'Contane2'
+  font-family: 'Contane2'!important;
+
 }
 
 .fadeIn {
@@ -164,7 +165,7 @@ background: #f9f8fc;
   color: #402d2d;
   padding: 40px 0;
   font-weight: 800;
-  font-family: Contane;
+  font-family: 'Contane'!important;
   font-size: 2em;
   text-transform: uppercase;
   letter-spacing: 0.5em;

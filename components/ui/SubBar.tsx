@@ -13,7 +13,7 @@ export const SubBar = () => {
 <Grid item  display='flex' justifyContent='center' xs ={12}p={1} pt={2}
     sx={{
 
-    height:'1vh',
+    height:'5vh',
 
     }}
 
@@ -29,24 +29,24 @@ export const SubBar = () => {
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:21}}
-                   color={ asPath === '/category/men' ? 'primary':'info'}>Hombres</Button>
+                style={{fontSize:20,backgroundColor: asPath === '/category/men' ? '#402d2d':'whitesmoke',color: asPath === '/category/men' ? 'whitesmoke':'#402d2d'}  }
+                >Hombres</Button>
             </Link>
         </NextLink>
         <NextLink href='/category/women' passHref>
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:21}}
-                color={ asPath === '/category/women' ? 'primary':'info'}>Mujeres</Button>
+                style={{fontSize:20,backgroundColor: asPath === '/category/women' ? '#402d2d':'whitesmoke',color: asPath === '/category/women' ? 'whitesmoke':'#402d2d'}  }
+                >Mujeres</Button>
             </Link>
         </NextLink>
         <NextLink href='/category/kid' passHref>
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:21}}
-                color={ asPath === '/category/kid' ? 'primary':'info'}>Niños</Button>
+                style={{fontSize:20,backgroundColor: asPath === '/category/kid' ? '#402d2d':'whitesmoke',color: asPath === '/category/kid' ? 'whitesmoke':'#402d2d'}  }
+                >Niños</Button>
             </Link>
         </NextLink>
     </Box>

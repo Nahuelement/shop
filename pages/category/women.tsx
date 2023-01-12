@@ -57,7 +57,7 @@ const WomenPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Shoping - Mujer'} pageDescription={'Encuentra los mejores productos de Teslo para ellas'}>
         {/* <Typography variant='h1' component='h1'>Mujeres</Typography> */}
 
-      <Grid container item pt={5} position='relative'
+      <Grid container item pt={8} position='relative'
           sx={{  flexDirection:'row',
 
           }}
@@ -70,9 +70,8 @@ const WomenPage: NextPage<Props> = ({products}) => {
         <Typography
 
         className="ml16" variant='h1' sx={{ display:{xs:'none',sm:isLoad?'flex':'none'},
-          mb: 0,
-          pt:9,
-          fontSize:{sm:'2.9em'}
+
+          fontSize:{sm:'3em'}
 
 
 

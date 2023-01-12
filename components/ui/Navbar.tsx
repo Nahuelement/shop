@@ -47,7 +47,7 @@ export const Navbar = () => {
             <Link style={{}}>
                 <Button
                 className='fontStyle'
-                style={{fontSize:16,backgroundColor: asPath === '/category/men' ? 'black':'white',color: asPath === '/category/men' ? 'white':'black'}  }
+                style={{fontSize:18,backgroundColor: asPath === '/category/men' ? '#402d2d':'whitesmoke',color: asPath === '/category/men' ? 'whitesmoke':'#402d2d'}  }
                 > Hombres</Button>
             </Link>
         </NextLink>
@@ -55,7 +55,7 @@ export const Navbar = () => {
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:16,backgroundColor: asPath === '/category/women' ? 'black':'white',color: asPath === '/category/women' ? 'white':'black'}  }
+                style={{fontSize:18,backgroundColor: asPath === '/category/women' ? '#402d2d':'whitesmoke',color: asPath === '/category/women' ? 'whitesmoke':'#402d2d'}  }
 
                 >
                     Mujeres</Button>
@@ -65,7 +65,7 @@ export const Navbar = () => {
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:16,backgroundColor: asPath === '/category/kid' ? 'black':'white',color: asPath === '/category/kid' ? 'white':'black'}  }
+                style={{fontSize:18,backgroundColor: asPath === '/category/kid' ? '#402d2d':'whitesmoke',color: asPath === '/category/kid' ? 'whitesmoke':'#402d2d'}  }
 
 
                 >Niños</Button>

@@ -59,7 +59,7 @@ const MenPage: NextPage<Props> = ({products}) => {
     <ShopLayout title={'Shoping - Hombres'} pageDescription={'Encuentra los mejores productospara ellos'}>
 
 
-<Grid container item pt={5} position='relative'
+<Grid container item pt={8} position='relative'
           sx={{  flexDirection:'row',
 
           }}
@@ -72,9 +72,8 @@ const MenPage: NextPage<Props> = ({products}) => {
         <Typography
 
         className="ml16" variant='h1' sx={{ display:{xs:'none',sm:isLoad?'flex':'none'},
-          mb: 0,
-          pt:9,
-          fontSize:{sm:'2.9em'}
+
+          fontSize:{sm:'3em'}
 
 
 
