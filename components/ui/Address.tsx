@@ -78,10 +78,10 @@ export const Address = () => {
   return (
     <form onSubmit={ handleSubmit( onSubmitAddress ) }>
 
-        <Box display='flex' flexDirection='row' justifyContent='center'  sx={{paddingTop:'-25vh'}}>
+        <Box display='flex' flexDirection='row' justifyContent='center'  >
             <Typography color='white' variant="h1" className='fontStyle' component='h1'>Dirección</Typography>
          </Box>
-            <Grid container spacing={ 4 } sx={{ mt: 0 ,p:4}} >
+            <Grid container spacing={ 4 } sx={{ mt: 0 ,p:2}} >
 
                 <Grid item xs={12} sm={ 6 }  >
                     <TextField
@@ -231,7 +231,7 @@ export const Address = () => {
             </Grid>
 
 
-            <Box sx={{ mt: 0, paddingBottom:{xs:'5vh',sm:'0vh'} }} display='flex' gap={3} justifyContent='center'>
+            <Box sx={{ mt: 2, paddingBottom:{xs:'5vh',sm:'0vh'} }} display='flex' gap={3} justifyContent='center'>
                 <Button type="submit" color="secondary" sx={{boxShadow:3,marginBottom:3}} className="circular-btn" size="large">
                     Revisar pedido
                 </Button>

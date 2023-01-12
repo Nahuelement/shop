@@ -20,7 +20,7 @@ export const SubBar = () => {
 >
 
 
-    <Box sx={{ display:'flex',width:'40vw' }}
+    <Box sx={{ display:'flex',width:{xs:'70vw',md:'35vw'}}}
         justifyContent='space-around'
 
 
@@ -29,7 +29,7 @@ export const SubBar = () => {
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:20,backgroundColor: asPath === '/category/men' ? '#402d2d':'whitesmoke',color: asPath === '/category/men' ? 'whitesmoke':'#402d2d'}  }
+                sx={{fontSize:{xs:16,md:20},backgroundColor: asPath === '/category/men' ? '#402d2d':'whitesmoke',color: asPath === '/category/men' ? 'whitesmoke':'#402d2d'}  }
                 >Hombres</Button>
             </Link>
         </NextLink>
@@ -37,7 +37,7 @@ export const SubBar = () => {
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:20,backgroundColor: asPath === '/category/women' ? '#402d2d':'whitesmoke',color: asPath === '/category/women' ? 'whitesmoke':'#402d2d'}  }
+                sx={{fontSize:{xs:16,md:20},backgroundColor: asPath === '/category/women' ? '#402d2d':'whitesmoke',color: asPath === '/category/women' ? 'whitesmoke':'#402d2d'}  }
                 >Mujeres</Button>
             </Link>
         </NextLink>
@@ -45,7 +45,7 @@ export const SubBar = () => {
             <Link>
                 <Button
                 className='fontStyle'
-                style={{fontSize:20,backgroundColor: asPath === '/category/kid' ? '#402d2d':'whitesmoke',color: asPath === '/category/kid' ? 'whitesmoke':'#402d2d'}  }
+                sx={{fontSize:{xs:16,md:20},backgroundColor: asPath === '/category/kid' ? '#402d2d':'whitesmoke',color: asPath === '/category/kid' ? 'whitesmoke':'#402d2d'}  }
                 >Niños</Button>
             </Link>
         </NextLink>

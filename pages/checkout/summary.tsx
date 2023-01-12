@@ -155,7 +155,8 @@ const SummaryPage = () => {
                 {
                     display:{xs:'flex',sm:'none'},
                     justifyContent:'center',
-                    paddingBottom:'5vh'
+                    paddingBottom:'5vh',
+                    paddingTop:'5vh'
                 }
             }>
                 <Card className='summary-card'>
@@ -177,7 +178,7 @@ const SummaryPage = () => {
                         <Typography>{ address }{ address2 ? `, ${address2}` : ''  } </Typography>
                         <Typography>{ city }</Typography>
                         {/* <Typography>{ countries.find( c => c.code === country )?.name }</Typography> */}
-                       
+
                         <Typography>{ phone }</Typography>
 
                         <Divider sx={{ my:1 }} />
