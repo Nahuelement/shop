@@ -75,14 +75,7 @@ export const Login = () => {
 
                          }}xs={10}>
                             <Typography color='whitesmoke' variant="h1" className='fontStyle' component="h1">Iniciar Sesión</Typography>
-                            <Chip
 
-                                label="Contraseña o usuario incorrecto"
-                                color="error"
-                                icon={ <ErrorOutline /> }
-                                className="fadeIn"
-                                sx={{ display: showError ? 'flex': 'none' ,mt:2}}
-                            />
                         </Grid>
 
                         <Grid item sx={{
@@ -203,7 +196,16 @@ export const Login = () => {
                             }
 
                         </Grid> */}
+                 <Grid item xs={12}>
+                            <Chip
 
+                                label="Contraseña o usuario incorrecto"
+                                color="error"
+                                icon={ <ErrorOutline /> }
+                                className="fadeIn"
+                                sx={{ display: showError ? 'flex': 'none' ,mt:2}}
+                            />
+                        </Grid>
                     </Grid>
                 </Box>
             </form>
