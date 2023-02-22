@@ -32,24 +32,24 @@ const KidPage: NextPage<Props> = ({products}) => {
 
       const textWrapper = document.querySelector('.ml16');
       textWrapper!.innerHTML = textWrapper!.textContent!.replace(/\S/g, "<span class='letter'>$&</span>");
+      setIsLoad(true)
 
     }
-
-
     anime.timeline({loop: false})
-    .add({
-      targets: '.ml16 .letter',
-      delay:2500
-    })
-    .add({
-      targets: '.ml16 .letter',
-      opacity: [0,1],
-      translateY: [-100,0],
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: (el, i) => 50 * i
-    })
-    setIsLoad(true)
+  .add({
+    targets: '.ml16 .letter',
+    delay:2500
+  })
+  .add({
+    targets: '.ml16 .letter',
+    opacity: [0,1],
+    translateY: [-100,0],
+    easing: "easeOutExpo",
+    duration: 2000,
+    delay: (el, i) => 50 * i
+  })
+
+
   }, [])
 
 

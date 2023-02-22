@@ -33,26 +33,25 @@ const MenPage: NextPage<Props> = ({products}) => {
 
       const textWrapper = document.querySelector('.ml16');
       textWrapper!.innerHTML = textWrapper!.textContent!.replace(/\S/g, "<span class='letter'>$&</span>");
+      setIsLoad(true)
 
     }
-
-
     anime.timeline({loop: false})
-    .add({
-      targets: '.ml16 .letter',
-      delay:2500
-    })
-    .add({
-      targets: '.ml16 .letter',
-      translateY: [-100,0],
-      opacity: [0,1],
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: (el, i) => 50 * i
-    })
-    setIsLoad(true)
-  }, [])
+  .add({
+    targets: '.ml16 .letter',
+    delay:2500
+  })
+  .add({
+    targets: '.ml16 .letter',
+    opacity: [0,1],
+    translateY: [-100,0],
+    easing: "easeOutExpo",
+    duration: 2000,
+    delay: (el, i) => 50 * i
+  })
 
+
+  }, [])
 
 
   return (
@@ -73,7 +72,7 @@ const MenPage: NextPage<Props> = ({products}) => {
 
         className="ml16" variant='h1' sx={{ display:{xs:'none',sm:isLoad?'flex':'none'},
 
-          
+
           fontSize:{sm:'3.2em'},
           letterSpacing:{xs:".-05em !important", lg:"-2em !important"},
           wordSpacing:{xs:"-.335em !important", lg:"1em !important"}
