@@ -74,8 +74,8 @@ const MenPage: NextPage<Props> = ({products}) => {
 
 
           fontSize:{sm:'3.2em'},
-          letterSpacing:{xs:".-05em !important", lg:"-2em !important"},
-          wordSpacing:{xs:"-.335em !important", lg:"1em !important"}
+          // letterSpacing:{xs:".-05em !important", lg:"-2em !important"},
+          // wordSpacing:{xs:"-.335em !important", lg:"1em !important"}
 
 
 
