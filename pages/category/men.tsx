@@ -70,7 +70,7 @@ const MenPage: NextPage<Props> = ({products}) => {
 
         <Typography
 
-        className="ml16" variant='h1' sx={{ display:{xs:'none',sm:isLoad?'flex':'none'},
+        className="ml16" variant='h1' sx={{ display:isLoad?'flex':'none',
 
 
           fontSize:{sm:'3.2em'},
