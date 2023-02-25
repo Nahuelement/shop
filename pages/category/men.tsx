@@ -137,9 +137,8 @@ const MenPage: NextPage<Props> = ({products}) => {
 
 
 
-import { GetServerSideProps } from 'next'
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
 
   await db.connect();
   const products = await Product.find({gender:'men'})

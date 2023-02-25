@@ -3,10 +3,11 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
 import { AppBar, Badge, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from '@mui/material';
-import { ClearOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import {  ClearOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
 import { CartContext, UiContext } from '../../context';
-import MenuIcon from '@mui/icons-material/Menu';
+
 
 export const Navbar = () => {
 
@@ -138,7 +139,7 @@ export const Navbar = () => {
 
 
                 <Button sx={{paddingTop:2}}onClick={ toggleSideMenu }>
-                    <MenuIcon/>
+                    <MenuOpenIcon/>
                 </Button>
 
             </Toolbar>
