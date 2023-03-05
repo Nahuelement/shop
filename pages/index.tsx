@@ -12,6 +12,7 @@ import { IProduct } from '../interfaces/products';
 import axios from 'axios';
 import { Product } from '../models';
 import { db } from '../database';
+import { Footer } from '../components/ui';
 
 interface Props {
   products:IProduct[]
@@ -46,7 +47,7 @@ const HomePage: NextPage<Props> = ({products}) => {
         {/* } */}
 
 
-
+        <Footer />
 
     </ShopLayout>
   )

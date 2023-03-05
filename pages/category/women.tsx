@@ -6,7 +6,7 @@ import { ShopLayout } from '../../components/layouts';
 import { ProductList } from '../../components/products';
 import { useProducts } from '../../hooks';
 
-import { FullScreenLoading } from '../../components/ui';
+import { Footer, FullScreenLoading } from '../../components/ui';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
 import { Product } from '../../models';
@@ -93,7 +93,7 @@ const WomenPage: NextPage<Props> = ({products}) => {
 
 
 
-
+        <Footer />
 
     </ShopLayout>
   )

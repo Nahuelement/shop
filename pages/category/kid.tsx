@@ -6,7 +6,7 @@ import { ShopLayout } from '../../components/layouts';
 import { ProductList } from '../../components/products';
 import { useProducts } from '../../hooks';
 
-import { FullScreenLoading } from '../../components/ui';
+import { Footer, FullScreenLoading } from '../../components/ui';
 import { useEffect, useState ,FC} from 'react';
 import anime from 'animejs'
 import { db, SHOP_CONSTANTS } from '../../database';
@@ -87,7 +87,7 @@ const KidPage: NextPage<Props> = ({products}) => {
 
 
 
-
+           <Footer />
 
 
     </ShopLayout>

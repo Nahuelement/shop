@@ -15,6 +15,7 @@ import { IProduct, ICartProduct, ISize } from '../../interfaces';
 
 
 
+
 interface Props {
   product: IProduct
 }
@@ -131,6 +132,8 @@ const ProductPage:NextPage<Props> = ({ product }) => {
 
 
       </Grid>
+
+
 
     </ShopLayout>
   )
